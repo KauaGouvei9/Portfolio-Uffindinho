@@ -1,0 +1,40 @@
+.trilha {
+  margin-bottom: var(--e-3);
+}
+
+.lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.link {
+  color: var(--tinta-media);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--transicao), border-color var(--transicao);
+}
+
+.link:hover {
+  color: var(--marca);
+  border-bottom-color: currentColor;
+}
+
+.separador {
+  color: var(--linha);
+  line-height: 1;
+}
+
+.atual {
+  color: var(--tinta);
+  font-weight: 500;
+}

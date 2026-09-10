@@ -1,0 +1,85 @@
+.grade {
+  display: grid;
+  gap: var(--e-2);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+}
+
+.pessoa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+  padding: var(--e-2);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border: 1px solid var(--azul-uff);
+  border-radius: 50%;
+  background-color: var(--papel);
+  color: var(--azul-uff);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-lg);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.nome {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-base);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.curso {
+  margin-top: 0.125rem;
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+}
+
+.links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: var(--e-1);
+  border-top: 1px dashed var(--linha);
+}
+
+.linkPerfil {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  color: var(--tinta-media);
+  background-color: var(--papel);
+  transition: border-color var(--transicao), color var(--transicao);
+}
+
+.linkPerfil:hover,
+.linkPerfil:focus-visible {
+  border-color: var(--marca);
+  color: var(--marca);
+}
+
+.nota {
+  margin-top: var(--e-4);
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+  max-width: 62ch;
+}

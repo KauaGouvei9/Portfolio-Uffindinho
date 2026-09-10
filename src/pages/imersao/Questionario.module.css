@@ -1,0 +1,39 @@
+.chamada {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--e-2);
+  padding: var(--e-4) var(--e-3);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+}
+
+/* botao desabilitado: legivel, mas visivelmente inativo (nao e link real) */
+.botaoGrande {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem 1.75rem;
+  border: 1px dashed var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel);
+  color: var(--tinta-media);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-lg);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
+.icone {
+  flex-shrink: 0;
+}
+
+.aviso {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+}

@@ -1,0 +1,99 @@
+/* --altura-embed e definido em JS via ref (setProperty), para manter
+   zero style inline no JSX e ainda permitir a prop height. */
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: var(--altura-embed, 520px);
+  min-height: 280px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+  overflow: hidden;
+}
+
+.quadro {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: var(--raio);
+}
+
+/* --- overlay de carregamento --- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-1);
+  background-color: var(--papel-alt);
+  color: var(--tinta-media);
+  font-size: var(--t-sm);
+}
+
+.overlayOculto {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transicao), visibility var(--transicao);
+}
+
+.pulso {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--linha);
+  border-top-color: var(--marca);
+  border-radius: 50%;
+  animation: girar 900ms linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- placeholder (src null) e fallback (falha de carga) --- */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  width: 100%;
+  height: var(--altura-embed, 520px);
+  min-height: 240px;
+  padding: var(--e-4) var(--e-3);
+  border: 1px dashed var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+  text-align: center;
+}
+
+.icone {
+  color: var(--marca);
+}
+
+.placeholderTexto {
+  max-width: 42ch;
+  color: var(--tinta-media);
+  font-size: var(--t-sm);
+}
+
+.placeholderTitulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-md);
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+.linkDireto {
+  font-size: var(--t-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulso {
+    animation: none;
+    border-top-color: var(--linha);
+  }
+}

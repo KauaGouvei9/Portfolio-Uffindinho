@@ -1,0 +1,254 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: color-mix(in srgb, var(--papel) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linha);
+  transition: box-shadow var(--transicao);
+}
+
+/* unica sombra do site inteiro, e so depois de 60px de scroll */
+.comSombra {
+  box-shadow: 0 1px 12px color-mix(in srgb, var(--tinta) 10%, transparent);
+}
+
+.interno {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-2);
+  height: var(--altura-navbar);
+}
+
+/* --- logo --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--tinta);
+  text-decoration: none;
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-md);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.logoIcone {
+  color: var(--marca);
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  color: var(--azul-uff);
+}
+
+/* --- navegacao desktop --- */
+.desktop {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .desktop {
+    display: flex;
+    align-items: center;
+    gap: var(--e-1);
+  }
+
+  .botaoMenu {
+    display: none;
+  }
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--raio);
+  color: var(--tinta);
+  font-size: var(--t-sm);
+  text-decoration: none;
+  transition: color var(--transicao), background-color var(--transicao);
+}
+
+.link:hover {
+  color: var(--azul-uff);
+  background-color: var(--papel-alt);
+}
+
+/* estado ativo: traco de marcacao embaixo, nao pilula preenchida */
+.ativo {
+  color: var(--azul-uff);
+  font-weight: 600;
+}
+
+.ativo::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.2rem;
+  height: 2px;
+  background-color: var(--marca);
+}
+
+/* --- dropdown Imersao --- */
+.grupoDropdown {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  min-width: 230px;
+  padding: 0.25rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+  display: flex;
+  flex-direction: column;
+}
+
+.itemDropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-2);
+  padding: 0.5rem 0.625rem;
+  border-radius: var(--raio);
+  color: var(--tinta);
+  font-size: var(--t-sm);
+  text-decoration: none;
+  transition: background-color var(--transicao), color var(--transicao);
+}
+
+.itemDropdown:hover,
+.itemDropdown:focus-visible {
+  background-color: var(--papel);
+  color: var(--azul-uff);
+}
+
+.itemAtivo {
+  color: var(--azul-uff);
+  font-weight: 600;
+}
+
+.chevron {
+  transition: transform var(--transicao);
+}
+
+.chevronAberto {
+  transform: rotate(180deg);
+}
+
+/* --- botao hamburger --- */
+.botaoMenu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  color: var(--tinta);
+  background-color: var(--papel-alt);
+}
+
+.botaoMenu:hover {
+  border-color: var(--marca);
+  color: var(--marca);
+}
+
+/* --- drawer mobile --- */
+.fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background-color: color-mix(in srgb, var(--tinta) 45%, transparent);
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 61;
+  width: min(320px, 86vw);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--linha);
+  background-color: var(--papel-alt);
+  overflow-y: auto;
+  animation: entrarDrawer 200ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+@keyframes entrarDrawer {
+  from {
+    transform: translateX(12px);
+    opacity: 0;
+  }
+}
+
+.drawerTopo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--altura-navbar);
+  padding-inline: var(--e-2);
+  border-bottom: 1px solid var(--linha);
+}
+
+.drawerTitulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-base);
+  font-weight: 700;
+}
+
+.drawerCorpo {
+  display: flex;
+  flex-direction: column;
+  padding: var(--e-2);
+  gap: 0.125rem;
+}
+
+.drawerLink {
+  padding: 0.625rem 0.5rem;
+  border-radius: var(--raio);
+  color: var(--tinta);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: background-color var(--transicao), border-color var(--transicao), color var(--transicao);
+}
+
+.drawerLink:hover {
+  background-color: var(--papel);
+}
+
+.drawerLinkAtivo {
+  color: var(--azul-uff);
+  font-weight: 600;
+  border-left-color: var(--marca);
+  background-color: var(--papel);
+}
+
+.drawerSecao {
+  margin-top: var(--e-2);
+  padding: 0 0.5rem 0.375rem;
+  font-size: var(--t-xs);
+  color: var(--tinta-media);
+  border-bottom: 1px solid var(--linha);
+}
+
+.drawerSub {
+  padding-left: var(--e-2);
+  font-size: var(--t-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer {
+    animation: none;
+  }
+}

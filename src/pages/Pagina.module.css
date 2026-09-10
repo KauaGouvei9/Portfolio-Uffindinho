@@ -1,0 +1,77 @@
+/* Estilos compartilhados por todas as paginas internas.
+   Mantem o mesmo ritmo vertical e o mesmo cabecalho em toda a Imersao. */
+
+.pagina {
+  padding-block: var(--e-4) var(--e-5);
+}
+
+.cabecalho {
+  padding-bottom: var(--e-3);
+  border-bottom: 1px solid var(--linha);
+  margin-bottom: var(--e-4);
+}
+
+.tituloLinha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--e-2);
+}
+
+.intro {
+  margin-top: var(--e-2);
+}
+
+.secao {
+  margin-top: var(--e-5);
+}
+
+.tituloSecao {
+  display: flex;
+  align-items: baseline;
+  gap: var(--e-1);
+  margin-bottom: var(--e-2);
+}
+
+/* nota tecnica embaixo de embeds e tabelas */
+.nota {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: var(--e-2);
+  padding: var(--e-2);
+  border-left: 2px solid var(--marca);
+  background-color: var(--papel-alt);
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+  max-width: 70ch;
+}
+
+.notaIcone {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--marca);
+}
+
+/* estado vazio: usa a mesma malha tecnica do hero */
+.estadoVazio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--e-1);
+  padding: var(--e-5) var(--e-3);
+  border: 1px dashed var(--linha);
+  border-radius: var(--raio);
+  text-align: center;
+  color: var(--tinta-media);
+}
+
+.estadoVazioIcone {
+  color: var(--marca);
+  margin-bottom: var(--e-1);
+}
+
+.estadoVazioTexto {
+  max-width: 46ch;
+  font-size: var(--t-sm);
+}

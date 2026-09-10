@@ -1,0 +1,227 @@
+/* =========================================================
+   HERO — pergunta do projeto + mascote ao lado
+   ========================================================= */
+.hero {
+  position: relative;
+  border-bottom: 1px solid var(--linha);
+  overflow: hidden;
+}
+
+.heroMalha {
+  position: absolute;
+  inset: 0;
+  /* a malha desbota nas bordas para nao competir com o texto */
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, #000 30%, transparent 100%);
+  pointer-events: none;
+}
+
+.heroInterno {
+  position: relative;
+  display: grid;
+  gap: var(--e-4);
+  padding-block: var(--e-5);
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .heroInterno {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: var(--e-6);
+    padding-block: var(--e-6);
+  }
+}
+
+.heroTexto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--e-2);
+}
+
+/* nome do projeto */
+.tituloHero {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  letter-spacing: -0.03em;
+}
+
+/* frase curta que explica o projeto em uma linha */
+.tagline {
+  max-width: 46ch;
+  font-size: var(--t-lg);
+  line-height: 1.35;
+  color: var(--tinta);
+}
+
+.descricaoHero {
+  max-width: 58ch;
+  color: var(--tinta-media);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: var(--e-1);
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--tinta);
+  border-radius: var(--raio);
+  background-color: var(--tinta);
+  color: var(--papel-alt);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color var(--transicao), border-color var(--transicao);
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background-color: var(--marca);
+  border-color: var(--marca);
+}
+
+/* --- mascote --- */
+.heroImagem {
+  display: flex;
+  justify-content: center;
+}
+
+.mascote {
+  width: min(280px, 70vw);
+  height: auto;
+  border-radius: var(--raio);
+}
+
+/* fallback discreto: so o icone, sem bloco de texto */
+.mascoteFallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  border: 1px solid var(--linha);
+  border-radius: 50%;
+  background-color: var(--papel-alt);
+  color: var(--marca);
+}
+
+/* =========================================================
+   SECOES
+   ========================================================= */
+.secao {
+  padding-block: var(--e-5);
+}
+
+.secaoAlt {
+  background-color: var(--papel-alt);
+  border-block: 1px solid var(--linha);
+}
+
+.introSecao {
+  margin-top: var(--e-1);
+  margin-bottom: var(--e-3);
+  max-width: 66ch;
+  color: var(--tinta-media);
+}
+
+/* --- blocos "o que estamos construindo" --- */
+.blocos {
+  display: grid;
+  gap: var(--e-2);
+}
+
+@media (min-width: 760px) {
+  .blocos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: var(--e-2);
+  border: 1px solid var(--linha);
+  border-top: 2px solid var(--azul-uff);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+}
+
+.blocoIcone {
+  color: var(--marca);
+}
+
+.blocoTitulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-md);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.blocoTexto {
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+  line-height: 1.55;
+}
+
+/* --- grid de entregas --- */
+.gridEntregas {
+  display: grid;
+  gap: var(--e-2);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+}
+
+/* --- equipe --- */
+.faixaEquipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  margin-bottom: var(--e-3);
+}
+
+.membro {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--azul-uff);
+  color: var(--azul-uff);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: var(--t-base);
+  background-color: var(--papel);
+}
+
+.nomeMembro {
+  font-size: var(--t-sm);
+}
+
+.linkEquipe {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--t-sm);
+  color: var(--azul-uff);
+  text-decoration: none;
+  border-bottom: 1px solid var(--linha);
+  padding-bottom: 2px;
+}
+
+.linkEquipe:hover,
+.linkEquipe:focus-visible {
+  color: var(--marca);
+  border-bottom-color: currentColor;
+}

@@ -1,0 +1,107 @@
+/* --- bloco "O que é?" --- */
+.definicao {
+  display: grid;
+  gap: var(--e-3);
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .definicao {
+    grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
+    gap: var(--e-5);
+  }
+}
+
+.simbolo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+  color: var(--marca);
+}
+
+.textoDefinicao {
+  max-width: 62ch;
+  color: var(--tinta-media);
+}
+
+.textoDefinicao + .textoDefinicao {
+  margin-top: var(--e-2);
+}
+
+.introAtividades {
+  margin-top: var(--e-1);
+  margin-bottom: var(--e-3);
+  max-width: 66ch;
+  color: var(--tinta-media);
+}
+
+/* --- grupos de atividades --- */
+.grupos {
+  display: grid;
+  gap: var(--e-3);
+}
+
+@media (min-width: 820px) {
+  .grupos {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--e-4);
+  }
+}
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+}
+
+.tituloGrupo {
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--azul-uff);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-md);
+  font-weight: 700;
+}
+
+.atividades {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.atividade {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: var(--t-sm);
+  line-height: 1.4;
+}
+
+/* numero em circulo, como no diagrama de referencia */
+.numero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--azul-uff);
+  color: var(--papel-alt);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-sm);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* a Imersao e a etapa publicada — recebe a cor de marcacao */
+.grupo:first-child .tituloGrupo {
+  border-bottom-color: var(--marca);
+}
+
+.grupo:first-child .numero {
+  background-color: var(--marca);
+}
