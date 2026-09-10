@@ -1,4 +1,4 @@
-# Uffindinho — Portfólio de IHC · Grupo 3 · UFF 2025
+# Uffindinho — Portfólio de IHC · Grupo 3 · UFF 2026.2
 
 Portfólio acadêmico do processo de design do **Grupo 3** da disciplina de
 **Interação Humano-Computador** (Prof.ª Daniela Gorski Trevisan — Instituto de
