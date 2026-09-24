@@ -8,6 +8,32 @@ import pagina from './Pagina.module.css'
 import imagemMascote from '../assets/uffindinho.png'
 import estilos from './Equipe.module.css'
 
+function LinkPerfil({ href, plataforma, nome, children }) {
+  if (!href || href === '#') {
+    return (
+      <span
+        className={`${estilos.linkPerfil} ${estilos.linkIndisponivel}`}
+        aria-label={`${plataforma} de ${nome} indisponível`}
+        role="img"
+      >
+        {children}
+      </span>
+    )
+  }
+
+  return (
+    <a
+      className={estilos.linkPerfil}
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={`${plataforma} de ${nome}`}
+    >
+      {children}
+    </a>
+  )
+}
+
 export default function Equipe() {
   const localizacao = useLocation()
   const sobreRef = useRef(null)
@@ -49,20 +75,12 @@ export default function Equipe() {
             </div>
 
             <div className={estilos.links}>
-              <a
-                className={estilos.linkPerfil}
-                href={pessoa.github}
-                aria-label={`GitHub de ${pessoa.nome}`}
-              >
+              <LinkPerfil href={pessoa.github} plataforma="GitHub" nome={pessoa.nome}>
                 <Github size={17} aria-hidden="true" />
-              </a>
-              <a
-                className={estilos.linkPerfil}
-                href={pessoa.linkedin}
-                aria-label={`LinkedIn de ${pessoa.nome}`}
-              >
+              </LinkPerfil>
+              <LinkPerfil href={pessoa.linkedin} plataforma="LinkedIn" nome={pessoa.nome}>
                 <Linkedin size={17} aria-hidden="true" />
-              </a>
+              </LinkPerfil>
             </div>
           </li>
         ))}
@@ -93,10 +111,6 @@ export default function Equipe() {
         </div>
       </section>
 
-      <p className={estilos.nota}>
-        Os links de perfil são placeholders. Para publicá-los, edite os campos{' '}
-        <code>github</code> e <code>linkedin</code> em <code>src/data/equipe.js</code>.
-      </p>
     </div>
   )
 }

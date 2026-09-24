@@ -18,7 +18,8 @@ export const formatoProblema = {
     'O formato do problema separa a pergunta em três campos. Preencher os três antes de escrever a pergunta final é o que impede que a solução entre no enunciado.',
 
   quem: [
-    'Alunos de graduação do IC (calouros e veteranos)',
+    'Estudantes do IC (calouros e veteranos)',
+    'Professores e demais servidores do Instituto',
     'Visitantes e usuários externos ao Instituto',
   ],
 

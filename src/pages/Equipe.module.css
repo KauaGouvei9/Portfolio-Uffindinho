@@ -77,6 +77,16 @@
   color: var(--marca);
 }
 
+.linkIndisponivel {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.linkIndisponivel:hover {
+  border-color: var(--linha);
+  color: var(--tinta-media);
+}
+
 /* --- secao sobre o mascote --- */
 .sobreMascote {
   display: grid;
@@ -120,11 +130,4 @@
 .paragrafoMascote:first-of-type {
   font-size: var(--t-md);
   color: var(--tinta);
-}
-
-.nota {
-  margin-top: var(--e-4);
-  font-size: var(--t-sm);
-  color: var(--tinta-media);
-  max-width: 62ch;
 }
