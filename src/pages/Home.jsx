@@ -9,7 +9,7 @@ import { equipe } from '../data/equipe'
 import estilos from './Home.module.css'
 
 // UNICO reveal orquestrado do site: os elementos do hero entram em sequencia.
-// Nenhuma outra secao anima no scroll — isso e proposital.
+// Nenhuma outra secao anima no scroll, e isso e proposital.
 const container = {
   oculto: {},
   visivel: { transition: { staggerChildren: 0.09, delayChildren: 0.05 } },
@@ -52,7 +52,11 @@ export default function Home() {
         >
           <div className={estilos.heroTexto}>
             <motion.h1 id="titulo-hero" className={estilos.tituloHero} variants={item}>
-              {projeto.nome}
+              {projeto.nomePartes.map((parte) => (
+                <span key={parte.texto} className={estilos[parte.cor]}>
+                  {parte.texto}
+                </span>
+              ))}
             </motion.h1>
 
             <motion.p className={estilos.tagline} variants={item}>
@@ -74,11 +78,17 @@ export default function Home() {
           </div>
 
           <motion.div className={estilos.heroImagem} variants={item}>
+            <Link
+              className={estilos.linkMascote}
+              to="/equipe"
+              state={{ rolarPara: 'sobre-uffindinho' }}
+              title={`Conheça o ${projeto.mascote}`}
+            >
             {imagemFalhou ? (
               <span
                 className={estilos.mascoteFallback}
                 role="img"
-                aria-label="Uffindinho, mascote do projeto"
+                aria-label={`${projeto.mascote}, mascote do projeto`}
               >
                 <MapPin size={44} strokeWidth={1.5} aria-hidden="true" />
               </span>
@@ -86,12 +96,14 @@ export default function Home() {
               <img
                 className={estilos.mascote}
                 src={imagemMascote}
-                alt="Uffindinho, mascote do projeto, um personagem que guia usuários pelo IC/UFF"
+                alt={`${projeto.mascote}, mascote do projeto, um personagem que guia usuários pelo IC da UFF`}
                 width="420"
                 height="420"
                 onError={() => setImagemFalhou(true)}
               />
             )}
+              <span className={estilos.dicaMascote}>Conheça o {projeto.mascote}</span>
+            </Link>
           </motion.div>
         </motion.div>
       </section>
@@ -123,7 +135,7 @@ export default function Home() {
           <h2 id="titulo-entregas">Imersão</h2>
           <p className={estilos.introSecao}>
             A etapa de entender o problema, o contexto e as pessoas envolvidas. Cada
-            técnica aplicada pelo grupo tem uma página própria.
+            técnica aplicada tem uma página própria.
           </p>
 
           <div className={estilos.gridEntregas}>
@@ -144,7 +156,7 @@ export default function Home() {
         <div className="container">
           <h2 id="titulo-equipe">Equipe</h2>
           <p className={estilos.introSecao}>
-            Os integrantes do {projeto.grupo}, responsáveis pelo projeto.
+            Quem está construindo o {projeto.nome}.
           </p>
 
           <ul className={estilos.faixaEquipe}>

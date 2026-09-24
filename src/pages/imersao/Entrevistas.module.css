@@ -1,16 +1,61 @@
-/* --- perfis --- */
-.perfis {
-  display: grid;
-  gap: var(--e-2);
+/* referencia bibliografica da tecnica */
+.referencia {
+  margin-top: var(--e-2);
+  padding-left: var(--e-2);
+  border-left: 2px solid var(--linha);
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+  max-width: 70ch;
 }
 
-@media (min-width: 700px) {
-  .perfis {
+.subtitulo {
+  margin-top: var(--e-3);
+  margin-bottom: var(--e-1);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-md);
+  font-weight: 600;
+}
+
+/* --- listas com marcador --- */
+.listaMarcada {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.itemMarcado {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: var(--t-sm);
+  line-height: 1.55;
+  color: var(--tinta-media);
+  max-width: 78ch;
+}
+
+.marcador {
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--marca);
+}
+
+/* --- cartoes de perfil e modalidade --- */
+.cartoes {
+  display: grid;
+  gap: var(--e-2);
+  margin-top: var(--e-3);
+}
+
+@media (min-width: 760px) {
+  .cartoes {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.perfil {
+.cartao {
   display: flex;
   gap: var(--e-2);
   padding: var(--e-2);
@@ -19,21 +64,22 @@
   background-color: var(--papel-alt);
 }
 
-.perfilIcone {
+.cartaoIcone {
   flex-shrink: 0;
-  color: var(--azul-uff);
   margin-top: 0.125rem;
+  color: var(--azul-uff);
 }
 
-.perfilTitulo {
+.cartaoTitulo {
   font-family: var(--fonte-titulo);
   font-size: var(--t-md);
   font-weight: 600;
+  line-height: 1.25;
 }
 
 .contagem {
   display: inline-block;
-  margin-top: 0.25rem;
+  margin-top: 0.375rem;
   padding: 0.125rem 0.5rem;
   border: 1px solid color-mix(in srgb, var(--marca) 40%, transparent);
   border-radius: var(--raio);
@@ -42,10 +88,43 @@
   color: var(--marca);
 }
 
-.perfilDescricao {
+.cartaoTexto {
   margin-top: var(--e-1);
   font-size: var(--t-sm);
   color: var(--tinta-media);
+  line-height: 1.55;
+}
+
+/* --- ficha tecnica do roteiro --- */
+.fichaTecnica {
+  display: grid;
+  gap: var(--e-1);
+  margin-bottom: var(--e-3);
+  padding: var(--e-2);
+  border: 1px solid var(--linha);
+  border-left: 2px solid var(--azul-uff);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+}
+
+.fichaItem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem var(--e-1);
+  font-size: var(--t-sm);
+}
+
+.fichaItem dt {
+  color: var(--tinta);
+  font-weight: 600;
+  min-width: 11ch;
+}
+
+.fichaItem dd {
+  margin: 0;
+  color: var(--tinta-media);
+  flex: 1;
+  min-width: 20ch;
 }
 
 /* --- accordion do roteiro --- */
@@ -65,6 +144,7 @@
   align-items: center;
   gap: var(--e-2);
   width: 100%;
+  min-height: 44px;
   padding: var(--e-2);
   text-align: left;
   transition: background-color var(--transicao);
@@ -88,6 +168,26 @@
   transform: rotate(180deg);
 }
 
+.blocoNumero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--linha);
+  border-radius: 50%;
+  background-color: var(--papel);
+  color: var(--tinta-media);
+  font-size: var(--t-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.gatilhoAberto .blocoNumero {
+  border-color: var(--marca);
+  color: var(--marca);
+}
+
 .blocoTitulo {
   flex: 1;
   font-family: var(--fonte-titulo);
@@ -104,13 +204,7 @@
 }
 
 .painel {
-  padding: 0 var(--e-2) var(--e-2) calc(var(--e-2) + 18px + var(--e-2));
-}
-
-.textoBloco {
-  font-size: var(--t-sm);
-  color: var(--tinta-media);
-  max-width: 68ch;
+  padding: 0 var(--e-2) var(--e-2) calc(var(--e-2) + 18px + 24px + var(--e-2) * 2);
 }
 
 .perguntas {
@@ -126,7 +220,7 @@
   border-left: 1px solid var(--linha);
   font-size: var(--t-sm);
   line-height: 1.5;
-  max-width: 68ch;
+  max-width: 72ch;
 }
 
 .codigo {
@@ -148,7 +242,7 @@
   background-color: var(--papel-alt);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 760px) {
   .tcle {
     flex-direction: row;
     align-items: flex-start;
@@ -161,23 +255,113 @@
   color: var(--azul-uff);
 }
 
-.tcleTitulo {
+.tcleCorpo {
+  min-width: 0;
+}
+
+/* cabecalho de identificacao da pesquisa */
+.identificacao {
+  display: grid;
+  gap: 0;
+  margin-bottom: var(--e-3);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel);
+  overflow: hidden;
+}
+
+.identificacaoItem {
+  display: grid;
+  gap: 0.125rem;
+  padding: 0.625rem var(--e-2);
+  font-size: var(--t-sm);
+}
+
+.identificacaoItem + .identificacaoItem {
+  border-top: 1px solid var(--linha);
+}
+
+@media (min-width: 640px) {
+  .identificacaoItem {
+    grid-template-columns: 16ch 1fr;
+    gap: var(--e-2);
+    align-items: baseline;
+  }
+}
+
+.identificacaoItem dt {
+  font-size: var(--t-xs);
+  color: var(--tinta-media);
+}
+
+.identificacaoItem dd {
+  margin: 0;
+  color: var(--tinta);
+}
+
+.tcleSecao + .tcleSecao,
+.declaracao {
+  margin-top: var(--e-2);
+}
+
+.tcleSecaoTitulo {
   font-family: var(--fonte-titulo);
-  font-size: var(--t-md);
+  font-size: var(--t-base);
   font-weight: 600;
-  margin-bottom: var(--e-1);
+  margin-bottom: 0.25rem;
 }
 
 .tcleTexto {
   font-size: var(--t-sm);
+  line-height: 1.6;
   color: var(--tinta-media);
-  max-width: 66ch;
+  max-width: 78ch;
+}
+
+.declaracao {
+  padding: var(--e-2);
+  border-left: 2px solid var(--marca);
+  background-color: var(--papel);
+}
+
+/* campos de assinatura do termo */
+.assinaturas {
+  display: grid;
+  gap: var(--e-3) var(--e-4);
+  margin-top: var(--e-4);
+  padding-top: var(--e-3);
+  border-top: 1px dashed var(--linha);
+}
+
+@media (min-width: 640px) {
+  .assinaturas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.campoAssinatura {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.linhaAssinatura {
+  display: block;
+  height: 1px;
+  margin-top: var(--e-3);
+  background-color: var(--tinta);
+}
+
+.rotuloAssinatura {
+  font-size: var(--t-xs);
+  color: var(--tinta-media);
 }
 
 .botaoDownload {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  min-height: 44px;
   margin-top: var(--e-2);
   padding: 0.625rem 1rem;
   border: 1px solid var(--azul-uff);
@@ -195,4 +379,49 @@
   background-color: var(--marca);
   border-color: var(--marca);
   color: var(--papel-alt);
+}
+
+/* --- etapas da analise --- */
+.etapas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+}
+
+.etapa {
+  display: flex;
+  gap: var(--e-2);
+  padding: var(--e-2);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+}
+
+.numeroEtapa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--azul-uff);
+  color: var(--papel-alt);
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-sm);
+  font-weight: 700;
+}
+
+.etapaTitulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--t-md);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.etapaTexto {
+  margin-top: 0.25rem;
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+  max-width: 76ch;
 }

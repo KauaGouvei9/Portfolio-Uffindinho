@@ -5,7 +5,7 @@ import estilos from './PageNav.module.css'
 
 /**
  * Navegacao "Anterior / Proxima" entre as entregas da Imersao.
- * A ordem vem de data/entregas.js — reordenar aquele array reordena a navegacao,
+ * A ordem vem de data/entregas.js. Reordenar aquele array reordena a navegacao,
  * sem tocar em nenhuma pagina.
  */
 export default function PageNav({ atualId }) {

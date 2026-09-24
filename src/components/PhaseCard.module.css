@@ -15,7 +15,7 @@
   transition: border-color var(--transicao), background-color var(--transicao);
 }
 
-/* o traco superior e o que muda entre estados — nao a sombra */
+/* o traco superior e o que muda entre estados, nao a sombra */
 .ficha::before {
   content: '';
   position: absolute;

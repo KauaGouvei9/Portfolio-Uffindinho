@@ -1,13 +1,20 @@
 import { useState } from 'react'
-import { ChevronDown, Download, FileText, MessageSquareDashed, UserRound, Users } from 'lucide-react'
+import {
+  ChevronDown,
+  Download,
+  FileText,
+  Info,
+  MapPin,
+  MessageSquareDashed,
+  Users,
+} from 'lucide-react'
 import Breadcrumb from '../../components/Breadcrumb'
 import PageNav from '../../components/PageNav'
 import { entrevistas } from '../../data/entrevistas'
 import pagina from '../Pagina.module.css'
 import estilos from './Entrevistas.module.css'
 
-// caminhos em data/ comecam com "/" — o base do Vite entra aqui
-const caminhoTcle = `${import.meta.env.BASE_URL}${entrevistas.tcle.arquivo.replace(/^\//, '')}`
+const caminhoTcle = `${import.meta.env.BASE_URL}${entrevistas.tcle.arquivo}`
 
 export default function Entrevistas() {
   // o primeiro bloco ja abre; os demais ficam fechados
@@ -25,54 +32,105 @@ export default function Entrevistas() {
       <header className={pagina.cabecalho}>
         <h1>Entrevistas</h1>
         <p className={`textoCorrido ${pagina.intro}`}>
-          Roteiro e TCLE prontos para entrevista semiestruturada individual com alunos do
-          IC e visitantes externos. A coleta ainda não foi realizada.
+          A técnica qualitativa da nossa Imersão: {entrevistas.tecnica.nome.toLowerCase()} com{' '}
+          {entrevistas.perfil.quantidade} alunos de graduação do Instituto de Computação.
         </p>
       </header>
 
-      <section aria-labelledby="metodo-entrevistas">
+      <section aria-labelledby="tecnica">
         <div className={pagina.tituloSecao}>
           <span className="numeroLegenda">01</span>
-          <h2 id="metodo-entrevistas">A técnica</h2>
+          <h2 id="tecnica">A técnica</h2>
         </div>
-        {entrevistas.metodo.map((paragrafo, indice) => (
+        {entrevistas.tecnica.paragrafos.map((paragrafo, indice) => (
           <p key={indice} className="textoCorrido">
             {paragrafo}
           </p>
         ))}
+        <p className={estilos.referencia}>{entrevistas.tecnica.referencia}</p>
       </section>
 
-      <section className={pagina.secao} aria-labelledby="perfis">
+      <section className={pagina.secao} aria-labelledby="objetivo">
         <div className={pagina.tituloSecao}>
           <span className="numeroLegenda">02</span>
-          <h2 id="perfis">Perfis previstos</h2>
+          <h2 id="objetivo">Objetivo</h2>
         </div>
+        <p className="textoCorrido">{entrevistas.objetivo.geral}</p>
 
-        <ul className={estilos.perfis}>
-          {entrevistas.perfis.map((perfil, indice) => {
-            const Icone = indice === 0 ? Users : UserRound
-            return (
-              <li key={perfil.titulo} className={estilos.perfil}>
-                <Icone className={estilos.perfilIcone} size={22} aria-hidden="true" />
-                <div>
-                  <h3 className={estilos.perfilTitulo}>{perfil.titulo}</h3>
-                  <p className={estilos.contagem}>
-                    {perfil.participantes}{' '}
-                    {perfil.participantes === 1 ? 'participante previsto' : 'participantes previstos'}
-                  </p>
-                  <p className={estilos.perfilDescricao}>{perfil.descricao}</p>
-                </div>
-              </li>
-            )
-          })}
+        <h3 className={estilos.subtitulo}>Objetivos específicos</h3>
+        <ul className={estilos.listaMarcada}>
+          {entrevistas.objetivo.especificos.map((item) => (
+            <li key={item} className={estilos.itemMarcado}>
+              <span className={estilos.marcador} aria-hidden="true" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className={pagina.secao} aria-labelledby="perfil">
+        <div className={pagina.tituloSecao}>
+          <span className="numeroLegenda">03</span>
+          <h2 id="perfil">Perfil dos participantes</h2>
+        </div>
+        <p className={`textoCorrido ${pagina.intro}`}>{entrevistas.perfil.intro}</p>
+
+        <div className={estilos.cartoes}>
+          <div className={estilos.cartao}>
+            <Users className={estilos.cartaoIcone} size={22} aria-hidden="true" />
+            <div>
+              <h3 className={estilos.cartaoTitulo}>{entrevistas.perfil.nome}</h3>
+              <p className={estilos.contagem}>
+                {entrevistas.perfil.quantidade} participantes
+              </p>
+              <p className={estilos.cartaoTexto}>{entrevistas.perfil.descricao}</p>
+            </div>
+          </div>
+
+          <div className={estilos.cartao}>
+            <MapPin className={estilos.cartaoIcone} size={22} aria-hidden="true" />
+            <div>
+              <h3 className={estilos.cartaoTitulo}>
+                Modalidade: {entrevistas.modalidade.nome.toLowerCase()}
+              </h3>
+              <p className={estilos.cartaoTexto}>{entrevistas.modalidade.criterio}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={pagina.secao} aria-labelledby="coleta">
+        <div className={pagina.tituloSecao}>
+          <span className="numeroLegenda">04</span>
+          <h2 id="coleta">Coleta de dados</h2>
+        </div>
+        <p className="textoCorrido">{entrevistas.coleta.intro}</p>
+        <ul className={estilos.listaMarcada}>
+          {entrevistas.coleta.itens.map((item) => (
+            <li key={item} className={estilos.itemMarcado}>
+              <span className={estilos.marcador} aria-hidden="true" />
+              {item}
+            </li>
+          ))}
         </ul>
       </section>
 
       <section className={pagina.secao} aria-labelledby="roteiro">
         <div className={pagina.tituloSecao}>
-          <span className="numeroLegenda">03</span>
-          <h2 id="roteiro">Roteiro</h2>
+          <span className="numeroLegenda">05</span>
+          <h2 id="roteiro">Roteiro completo</h2>
         </div>
+
+        <dl className={estilos.fichaTecnica}>
+          <div className={estilos.fichaItem}>
+            <dt>Duração estimada</dt>
+            <dd>{entrevistas.infoRoteiro.duracao}</dd>
+          </div>
+          <div className={estilos.fichaItem}>
+            <dt>Materiais</dt>
+            <dd>{entrevistas.infoRoteiro.materiais}</dd>
+          </div>
+        </dl>
 
         <div className={estilos.roteiro}>
           {entrevistas.roteiro.map((bloco) => {
@@ -93,7 +151,10 @@ export default function Entrevistas() {
                       size={18}
                       aria-hidden="true"
                     />
-                    <span className={estilos.blocoTitulo}>{bloco.titulo}</span>
+                    <span className={estilos.blocoNumero} aria-hidden="true">
+                      {bloco.numero}
+                    </span>
+                    <span className={estilos.blocoTitulo}>{bloco.nome}</span>
                     <span className={estilos.duracao}>{bloco.duracao}</span>
                   </button>
                 </h3>
@@ -105,7 +166,16 @@ export default function Entrevistas() {
                     role="region"
                     aria-labelledby={`gatilho-${bloco.id}`}
                   >
-                    {bloco.texto && <p className={estilos.textoBloco}>{bloco.texto}</p>}
+                    {bloco.topicos && (
+                      <ul className={estilos.listaMarcada}>
+                        {bloco.topicos.map((topico) => (
+                          <li key={topico} className={estilos.itemMarcado}>
+                            <span className={estilos.marcador} aria-hidden="true" />
+                            {topico}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
 
                     {bloco.perguntas && (
                       <ul className={estilos.perguntas}>
@@ -123,32 +193,93 @@ export default function Entrevistas() {
             )
           })}
         </div>
+
       </section>
 
       <section className={pagina.secao} aria-labelledby="tcle">
         <div className={pagina.tituloSecao}>
-          <span className="numeroLegenda">04</span>
-          <h2 id="tcle">Consentimento</h2>
+          <span className="numeroLegenda">06</span>
+          <h2 id="tcle">{entrevistas.tcle.titulo}</h2>
         </div>
+        <p className={`textoCorrido ${pagina.intro}`}>{entrevistas.tcle.intro}</p>
 
         <div className={estilos.tcle}>
-          <FileText className={estilos.tcleIcone} size={32} strokeWidth={1.5} aria-hidden="true" />
-          <div>
-            <h3 className={estilos.tcleTitulo}>{entrevistas.tcle.titulo}</h3>
-            <p className={estilos.tcleTexto}>{entrevistas.tcle.texto}</p>
-            <a className={estilos.botaoDownload} href={caminhoTcle} download>
-              <Download size={16} aria-hidden="true" />
-              {entrevistas.tcle.rotulo}
-            </a>
+          <FileText className={estilos.tcleIcone} size={28} strokeWidth={1.5} aria-hidden="true" />
+
+          <div className={estilos.tcleCorpo}>
+            <dl className={estilos.identificacao}>
+              {entrevistas.tcle.identificacao.map((linha) => (
+                <div key={linha.rotulo} className={estilos.identificacaoItem}>
+                  <dt>{linha.rotulo}</dt>
+                  <dd>{linha.valor}</dd>
+                </div>
+              ))}
+            </dl>
+
+            {entrevistas.tcle.secoes.map((secao) => (
+              <div key={secao.titulo} className={estilos.tcleSecao}>
+                <h3 className={estilos.tcleSecaoTitulo}>{secao.titulo}</h3>
+                <p className={estilos.tcleTexto}>{secao.texto}</p>
+              </div>
+            ))}
+
+            <div className={estilos.declaracao}>
+              <h3 className={estilos.tcleSecaoTitulo}>Declaração de consentimento</h3>
+              <p className={estilos.tcleTexto}>{entrevistas.tcle.declaracao}</p>
+            </div>
+
+            <div className={estilos.assinaturas}>
+              {entrevistas.tcle.campos.map((campo) => (
+                <div key={campo} className={estilos.campoAssinatura}>
+                  <span className={estilos.linhaAssinatura} aria-hidden="true" />
+                  <span className={estilos.rotuloAssinatura}>{campo}</span>
+                </div>
+              ))}
+            </div>
+
+            {entrevistas.tcle.arquivoDisponivel ? (
+              <a className={estilos.botaoDownload} href={caminhoTcle} download>
+                <Download size={16} aria-hidden="true" />
+                {entrevistas.tcle.rotulo}
+              </a>
+            ) : (
+              <p className={pagina.nota}>
+                <Info className={pagina.notaIcone} size={16} aria-hidden="true" />
+                {entrevistas.tcle.avisoSemArquivo}
+              </p>
+            )}
           </div>
         </div>
       </section>
 
+      <section className={pagina.secao} aria-labelledby="analise">
+        <div className={pagina.tituloSecao}>
+          <span className="numeroLegenda">07</span>
+          <h2 id="analise">Análise dos dados</h2>
+        </div>
+        <p className={`textoCorrido ${pagina.intro}`}>{entrevistas.analise.intro}</p>
+
+        <ol className={estilos.etapas}>
+          {entrevistas.analise.etapas.map((etapa, indice) => (
+            <li key={etapa.titulo} className={estilos.etapa}>
+              <span className={estilos.numeroEtapa} aria-hidden="true">
+                {indice + 1}
+              </span>
+              <div>
+                <h3 className={estilos.etapaTitulo}>{etapa.titulo}</h3>
+                <p className={estilos.etapaTexto}>{etapa.texto}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
       <section className={pagina.secao} aria-labelledby="resultados">
         <div className={pagina.tituloSecao}>
-          <span className="numeroLegenda">05</span>
+          <span className="numeroLegenda">08</span>
           <h2 id="resultados">{entrevistas.resultados.titulo}</h2>
         </div>
+        <p className={`textoCorrido ${pagina.intro}`}>{entrevistas.resultados.intro}</p>
 
         <div className={`malha ${pagina.estadoVazio}`}>
           <MessageSquareDashed

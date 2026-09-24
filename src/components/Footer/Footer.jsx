@@ -73,7 +73,7 @@ export default function Footer() {
         </nav>
       </div>
 
-      {/* faixa institucional — repetida ao final de todas as paginas */}
+      {/* faixa institucional, repetida ao final de todas as paginas */}
       <div className={estilos.faixa}>
         <div className={`container ${estilos.faixaInterna}`}>
           <div className={estilos.logos}>

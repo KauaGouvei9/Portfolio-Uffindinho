@@ -77,6 +77,51 @@
   color: var(--marca);
 }
 
+/* --- secao sobre o mascote --- */
+.sobreMascote {
+  display: grid;
+  gap: var(--e-3);
+  align-items: center;
+  margin-top: var(--e-6);
+  padding: var(--e-4) var(--e-3);
+  border: 1px solid var(--linha);
+  border-top: 2px solid var(--marca);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+  scroll-margin-top: calc(var(--altura-navbar) + var(--e-3));
+}
+
+@media (min-width: 800px) {
+  .sobreMascote {
+    grid-template-columns: minmax(0, 200px) minmax(0, 1fr);
+    gap: var(--e-5);
+    padding: var(--e-4);
+  }
+}
+
+.retratoMascote {
+  width: min(200px, 60vw);
+  height: auto;
+  justify-self: center;
+}
+
+.textoMascote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-2);
+}
+
+.paragrafoMascote {
+  max-width: 68ch;
+  color: var(--tinta-media);
+  line-height: 1.65;
+}
+
+.paragrafoMascote:first-of-type {
+  font-size: var(--t-md);
+  color: var(--tinta);
+}
+
 .nota {
   margin-top: var(--e-4);
   font-size: var(--t-sm);

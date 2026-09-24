@@ -1,5 +1,5 @@
 /* =========================================================
-   HERO — pergunta do projeto + mascote ao lado
+   HERO: nome do projeto + mascote ao lado
    ========================================================= */
 .hero {
   position: relative;
@@ -39,10 +39,18 @@
   gap: var(--e-2);
 }
 
-/* nome do projeto */
+/* nome do projeto, com as duas metades em cores diferentes */
 .tituloHero {
   font-size: clamp(2.5rem, 8vw, 4rem);
   letter-spacing: -0.03em;
+}
+
+.azul {
+  color: var(--azul-uff);
+}
+
+.vermelho {
+  color: var(--marca);
 }
 
 /* frase curta que explica o projeto em uma linha */
@@ -84,6 +92,44 @@
 .heroImagem {
   display: flex;
   justify-content: center;
+}
+
+/* o mascote leva ate a secao que fala dele, na pagina Equipe */
+.linkMascote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--e-1);
+  border-radius: var(--raio);
+  text-decoration: none;
+  transition: transform var(--transicao);
+}
+
+.linkMascote:hover,
+.linkMascote:focus-visible {
+  transform: translateY(-3px);
+}
+
+.dicaMascote {
+  font-size: var(--t-xs);
+  color: var(--tinta-media);
+  border-bottom: 1px solid var(--linha);
+  padding-bottom: 2px;
+  transition: color var(--transicao), border-color var(--transicao);
+}
+
+.linkMascote:hover .dicaMascote,
+.linkMascote:focus-visible .dicaMascote {
+  color: var(--marca);
+  border-bottom-color: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .linkMascote:hover,
+  .linkMascote:focus-visible {
+    transform: none;
+  }
 }
 
 .mascote {

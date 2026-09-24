@@ -1,0 +1,65 @@
+.grafico {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.linha {
+  display: grid;
+  gap: 0.25rem 0.75rem;
+  align-items: center;
+}
+
+@media (min-width: 640px) {
+  .linha {
+    grid-template-columns: minmax(0, 22ch) minmax(0, 1fr) 6ch;
+  }
+}
+
+.rotulo {
+  font-size: var(--t-sm);
+  line-height: 1.35;
+  color: var(--tinta);
+}
+
+.trilho {
+  position: relative;
+  height: 14px;
+  border-radius: 2px;
+  background-color: color-mix(in srgb, var(--linha) 40%, transparent);
+  overflow: hidden;
+}
+
+/* --p e definido em JS a partir do data-valor, sem style inline no JSX */
+.preenchimento {
+  display: block;
+  height: 100%;
+  width: calc(var(--p, 0) * 1%);
+  border-radius: 2px;
+  background-color: var(--azul-uff);
+  transition: width 320ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* barras acima do limiar recebem a cor de marcacao */
+.destaque .preenchimento {
+  background-color: var(--marca);
+}
+
+.valor {
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--tinta);
+  text-align: right;
+}
+
+.baseDiferente {
+  font-size: var(--t-xs);
+  color: var(--tinta-media);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preenchimento {
+    transition: none;
+  }
+}

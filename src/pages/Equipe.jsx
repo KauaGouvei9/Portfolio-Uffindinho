@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Github, Linkedin } from 'lucide-react'
 import Breadcrumb from '../components/Breadcrumb'
 import { equipe } from '../data/equipe'
@@ -5,7 +7,23 @@ import { projeto } from '../data/projeto'
 import pagina from './Pagina.module.css'
 import estilos from './Equipe.module.css'
 
+const imagemMascote = `${import.meta.env.BASE_URL}assets/uffindinho.png`
+
 export default function Equipe() {
+  const localizacao = useLocation()
+  const sobreRef = useRef(null)
+
+  // o mascote da Home chega aqui pedindo para rolar ate a secao sobre ele
+  useEffect(() => {
+    if (localizacao.state?.rolarPara !== 'sobre-uffindinho') return
+
+    const reduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    sobreRef.current?.scrollIntoView({
+      behavior: reduzido ? 'auto' : 'smooth',
+      block: 'start',
+    })
+  }, [localizacao.state])
+
   return (
     <div className={`container ${pagina.pagina}`}>
       <Breadcrumb itens={[{ rotulo: 'Equipe' }]} />
@@ -13,7 +31,8 @@ export default function Equipe() {
       <header className={pagina.cabecalho}>
         <h1>Equipe</h1>
         <p className={`textoCorrido ${pagina.intro}`}>
-          Os integrantes do {projeto.grupo}, responsáveis pelo projeto {projeto.nome}.
+          Somos o {projeto.grupo} da disciplina de Interação Humano-Computador, e estas
+          são as pessoas que estão construindo o {projeto.nome}.
         </p>
       </header>
 
@@ -49,6 +68,31 @@ export default function Equipe() {
           </li>
         ))}
       </ul>
+
+      <section
+        className={estilos.sobreMascote}
+        id="sobre-uffindinho"
+        ref={sobreRef}
+        aria-labelledby="titulo-mascote"
+      >
+        <img
+          className={estilos.retratoMascote}
+          src={imagemMascote}
+          alt={`${projeto.mascote}, mascote do projeto`}
+          width="280"
+          height="270"
+          loading="lazy"
+        />
+
+        <div className={estilos.textoMascote}>
+          <h2 id="titulo-mascote">{projeto.sobreMascote.titulo}</h2>
+          {projeto.sobreMascote.paragrafos.map((paragrafo, indice) => (
+            <p key={indice} className={estilos.paragrafoMascote}>
+              {paragrafo}
+            </p>
+          ))}
+        </div>
+      </section>
 
       <p className={estilos.nota}>
         Os links de perfil são placeholders. Para publicá-los, edite os campos{' '}

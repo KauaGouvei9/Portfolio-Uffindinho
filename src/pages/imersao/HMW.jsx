@@ -5,6 +5,7 @@ import { formatoProblema } from '../../data/hmw'
 import pagina from '../Pagina.module.css'
 import estilos from './HMW.module.css'
 
+// destaca [QUEM], [O QUE] e [METAS DE DESIGN] sem mudar o texto em data/hmw.js
 function Formula() {
   const partes = formatoProblema.formula.split(/(\[[^\]]+\])/g)
 
@@ -39,24 +40,37 @@ function ListaCampo({ itens }) {
 export default function HMW() {
   return (
     <div className={`container ${pagina.pagina}`}>
-      <Breadcrumb itens={[{ rotulo: 'Imersão' }, { rotulo: 'How Might We?' }]} />
+      <Breadcrumb itens={[{ rotulo: 'Imersão' }, { rotulo: 'How Might We' }]} />
 
       <header className={pagina.cabecalho}>
-        <h1>How Might We?</h1>
-        <p className={`textoCorrido ${pagina.intro}`}>{formatoProblema.oQueEHmw.texto}</p>
+        <h1>How Might We</h1>
+        <p className={`textoCorrido ${pagina.intro}`}>{formatoProblema.explicacao}</p>
       </header>
 
-      <section aria-labelledby="formula">
-        <h2 id="formula">A fórmula</h2>
-        <Formula />
-        <p className={`textoCorrido`}>{formatoProblema.explicacao}</p>
+      <section aria-labelledby="o-que-e">
+        <div className={pagina.tituloSecao}>
+          <span className="numeroLegenda">01</span>
+          <h2 id="o-que-e">O que é a técnica</h2>
+        </div>
+        {formatoProblema.oQueE.map((paragrafo, indice) => (
+          <p key={indice} className="textoCorrido">
+            {paragrafo}
+          </p>
+        ))}
       </section>
 
-      <section className={pagina.secao} aria-labelledby="campos">
-        <h2 id="campos">Os três campos</h2>
+      <section className={pagina.secao} aria-labelledby="formato">
+        <div className={pagina.tituloSecao}>
+          <span className="numeroLegenda">02</span>
+          <h2 id="formato">Formato do Problema</h2>
+        </div>
+        <p className={`textoCorrido ${pagina.intro}`}>{formatoProblema.introFormato}</p>
 
-        <div className={estilos.rolagem} tabIndex="0" role="region" aria-labelledby="campos">
+        <Formula />
+
+        <div className={estilos.rolagem} tabIndex="0" role="region" aria-labelledby="formato">
           <table className={estilos.tabela}>
+            <caption>Os três campos do formato do problema aplicados ao Uffindinho.</caption>
             <thead>
               <tr>
                 <th scope="col">Quem</th>
@@ -84,7 +98,14 @@ export default function HMW() {
       </section>
 
       <section className={pagina.secao} aria-labelledby="pergunta-final">
-        <h2 id="pergunta-final">Pergunta consolidada</h2>
+        <div className={pagina.tituloSecao}>
+          <span className="numeroLegenda">03</span>
+          <h2 id="pergunta-final">Pergunta consolidada</h2>
+        </div>
+        <p className={`textoCorrido ${pagina.intro}`}>
+          Os três campos acima, reunidos na pergunta que orienta todas as decisões das
+          próximas fases:
+        </p>
         <p className={estilos.perguntaFinal}>{projeto.hmw}</p>
       </section>
 

@@ -5,7 +5,7 @@ import { fases } from '../data/roadmap'
 import pagina from './Pagina.module.css'
 import estilos from './ComingSoon.module.css'
 
-// icone especifico por fase — a pagina nao e um erro, e uma etapa futura
+// icone especifico por fase. A pagina nao e um erro, e uma etapa futura
 const ICONES = {
   ideacao: Lightbulb,
   prototipacao: PencilRuler,
@@ -31,7 +31,7 @@ export default function ComingSoon({ faseId }) {
         <Icone className={estilos.icone} size={64} strokeWidth={1.25} aria-hidden="true" />
         <h2 id="titulo-em-breve">{fase.nome}</h2>
         <p className={estilos.texto}>
-          O conteúdo desta etapa será publicado assim que o grupo concluir a fase.
+          Esta etapa ainda não começou. O conteúdo aparece aqui conforme o projeto avança.
         </p>
 
         <div className={estilos.atalhos}>

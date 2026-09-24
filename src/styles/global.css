@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 /* ==========================================================================
-   TOKENS — direcao "planta baixa / legenda de mapa"
+   TOKENS: direcao "planta baixa / legenda de mapa"
    Alterar aqui muda o site inteiro. Nenhum hex solto nos modulos CSS.
    ========================================================================== */
 :root {
@@ -11,7 +11,7 @@
   --tinta: #0b2239;        /* texto principal / traco de planta */
   --tinta-media: #43596e;  /* texto secundario (AA sobre --papel) */
   --azul-uff: #1a4e8a;     /* ancora institucional, links, ativo */
-  --marca: #c31a5e;        /* acento: magenta de marcacao topografica */
+  --marca: #c1121f;        /* vermelho do "Ind" de Finding (8,3:1 sobre o papel) */
   --linha: #b9c7d6;        /* hairlines, malha tecnica, bordas */
   --ok: #14705a;           /* status concluido */
 
@@ -29,7 +29,7 @@
   --t-3xl: 3rem;       /* 48px */
   --t-4xl: 4rem;       /* 64px */
 
-  /* espaco — multiplos da malha de 8px */
+  /* espaco: multiplos da malha de 8px */
   --e-1: 0.5rem;
   --e-2: 1rem;
   --e-3: 1.5rem;
@@ -148,7 +148,7 @@ a:hover {
   color: var(--marca);
 }
 
-/* numeral de legenda: 01, 02, 03 — substitui os eyebrow labels */
+/* numeral de legenda: 01, 02, 03. Substitui os eyebrow labels */
 .numeroLegenda {
   font-family: var(--fonte-corpo);
   font-size: var(--t-xs);
@@ -203,6 +203,19 @@ a:hover {
   outline: 2px solid var(--marca);
   outline-offset: 3px;
   border-radius: var(--raio);
+}
+
+/* texto visivel apenas para leitores de tela */
+.apenasLeitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .pularParaConteudo {

@@ -34,13 +34,28 @@
   letter-spacing: -0.02em;
 }
 
-.logoIcone {
-  color: var(--marca);
+/* o mascote e a marca: em 28px ele le como logotipo, nao como ilustracao */
+.logoMascote {
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
-.logo:hover {
+.azul {
   color: var(--azul-uff);
+}
+
+.vermelho {
+  color: var(--marca);
+}
+
+.logo:hover .azul {
+  color: var(--tinta);
+}
+
+.logo:hover .vermelho {
+  color: var(--tinta);
 }
 
 /* --- navegacao desktop --- */
@@ -78,13 +93,9 @@
   background-color: var(--papel-alt);
 }
 
-/* estado ativo: traco de marcacao embaixo, nao pilula preenchida */
-.ativo {
-  color: var(--azul-uff);
-  font-weight: 600;
-}
-
-.ativo::after {
+/* o traco de marcacao existe sempre, escondido em escala 0, assim ele cresce
+   em vez de aparecer de uma vez, que era o "pisca" na troca de secao */
+.link::after {
   content: '';
   position: absolute;
   left: 0.75rem;
@@ -92,6 +103,25 @@
   bottom: 0.2rem;
   height: 2px;
   background-color: var(--marca);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 180ms cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* estado ativo: traco de marcacao embaixo, nao pilula preenchida */
+.ativo {
+  color: var(--azul-uff);
+  font-weight: 600;
+}
+
+.ativo::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link::after {
+    transition: none;
+  }
 }
 
 /* --- dropdown Imersao --- */
@@ -145,16 +175,22 @@
 }
 
 /* --- botao hamburger --- */
+/* 44x44: alvo de toque minimo recomendado (WCAG 2.5.5 / HIG) */
 .botaoMenu {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--linha);
   border-radius: var(--raio);
   color: var(--tinta);
   background-color: var(--papel-alt);
+}
+
+.botaoMenu:active {
+  background-color: var(--papel);
+  border-color: var(--marca);
 }
 
 .botaoMenu:hover {
@@ -182,13 +218,18 @@
   border-left: 1px solid var(--linha);
   background-color: var(--papel-alt);
   overflow-y: auto;
-  animation: entrarDrawer 200ms cubic-bezier(0.2, 0, 0.2, 1);
+  /* entrada so por opacidade: um translateX que ficasse preso no frame
+     inicial deslocaria o drawer para fora da viewport e criaria scroll
+     horizontal. O fade nao tem esse risco. */
+  animation: entrarDrawer 180ms cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 @keyframes entrarDrawer {
   from {
-    transform: translateX(12px);
     opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -215,7 +256,10 @@
 }
 
 .drawerLink {
-  padding: 0.625rem 0.5rem;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem 0.5rem;
   border-radius: var(--raio);
   color: var(--tinta);
   text-decoration: none;

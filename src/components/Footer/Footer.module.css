@@ -49,11 +49,15 @@
 .lista {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
   font-size: var(--t-sm);
 }
 
+/* 24px de altura minima: WCAG 2.5.8 (Target Size, AA) */
 .link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding-block: 0.125rem;
   color: var(--tinta);
   text-decoration: none;
   transition: color var(--transicao);

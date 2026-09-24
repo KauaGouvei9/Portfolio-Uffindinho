@@ -18,11 +18,13 @@ import Questionario from './pages/imersao/Questionario'
 
 import estilos from './App.module.css'
 
-// transicao de rota: unica animacao do site fora do reveal do hero
+// Transicao de rota: so fade-IN. O fade-out foi removido de proposito:
+// com mode="wait" o par saida+entrada deixava a tela em branco por alguns
+// frames, e era isso que fazia o conteudo e o rotulo ativo "piscarem".
 const transicaoRota = {
   inicial: { opacity: 0 },
-  animada: { opacity: 1 },
-  saida: { opacity: 0 },
+  animada: { opacity: 1, transition: { duration: 0.24, ease: [0.2, 0, 0.2, 1] } },
+  saida: { opacity: 1, transition: { duration: 0 } },
 }
 
 function TopoAoTrocarRota() {
@@ -51,14 +53,16 @@ export default function App() {
         <TopoAoTrocarRota />
 
         <main className={estilos.conteudo} id="conteudo">
-          <AnimatePresence mode="wait">
+          {/* initial={false}: a primeira renderizacao entra ja visivel.
+              Se a animacao nao rodar (aba em segundo plano, rAF pausado),
+              o conteudo nao fica preso em opacity: 0. */}
+          <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={localizacao.pathname}
               variants={transicaoRota}
               initial="inicial"
               animate="animada"
               exit="saida"
-              transition={{ duration: 0.18, ease: 'easeOut' }}
             >
               <Routes location={localizacao}>
                 <Route path="/" element={<Home />} />

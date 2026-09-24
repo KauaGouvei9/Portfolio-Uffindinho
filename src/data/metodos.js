@@ -1,38 +1,47 @@
 // Textos de metodo das paginas de Imersao.
 // Regra: descrever o metodo e o estado real do material. Nao registrar
-// "achados" ou numeros que o grupo ainda nao produziu.
+// achados ou numeros que o grupo ainda nao produziu.
 
 export const metodos = {
   matrizCSD: {
     paragrafos: [
-      'A Matriz CSD organiza o que o grupo sabe, imagina e ignora sobre o problema em três colunas: Certezas (o que já foi verificado), Suposições (o que acreditamos, mas ainda não confirmamos) e Dúvidas (o que precisamos investigar).',
-      'As suposições e dúvidas registradas na matriz são o insumo das técnicas seguintes da Imersão: cada uma delas precisa ser confirmada ou descartada pelas entrevistas e pelo questionário.',
+      'A Matriz CSD organiza o que já se sabe sobre um problema em três colunas: Certezas, o que foi verificado; Suposições, o que se acredita mas ainda não foi confirmado; e Dúvidas, o que precisa ser investigado.',
+      'As suposições e as dúvidas registradas na matriz são o ponto de partida das técnicas seguintes. Cada uma delas precisa ser confirmada ou descartada pelas entrevistas e pelo questionário.',
     ],
     nota: 'Navegue pelo board usando o scroll e o zoom do Miro. Clique no ícone de expansão para ver em tela cheia.',
   },
 
   mapaEmpatia: {
-    paragrafos: [
-      'O Mapa de Empatia organiza o que sabemos sobre o usuário em seis campos — o que ele pensa e sente, vê, ouve, fala e faz, além de dores e ganhos. Serve para que as decisões de interface sejam discutidas a partir da perspectiva de quem usa.',
-      'O grupo aplicou a técnica em sala, sobre o perfil do aluno que precisa localizar uma sala ou um serviço administrativo no IC. O resultado está em cartolina e ainda não foi digitalizado — por isso esta página ainda não exibe o mapa.',
-    ],
-    nota: 'O Mapa de Empatia foi construído em cartolina durante a aula. A versão digital ainda não foi produzida.',
+    nota: 'A versão digital da cartolina no Miro será publicada aqui. A transcrição completa dos quatro campos está na seção acima.',
   },
 
   analiseCompetitiva: {
     paragrafos: [
-      'A análise competitiva compara sistemas que já resolvem — bem ou mal — o mesmo problema do usuário. Separamos em três categorias: concorrentes diretos, que atendem o mesmo objetivo e o mesmo público; indiretos, que resolvem parte do problema ou atendem um público vizinho; e inspiradores, que resolvem outro problema com uma experiência que vale importar.',
-      'Para cada sistema o grupo registrou pontos positivos, pontos negativos e o que dali serve de referência para o projeto. A tabela abaixo é o resultado dessa comparação.',
+      'A análise competitiva compara sistemas que já resolvem, bem ou mal, o mesmo problema do usuário. Ela evita que o projeto reinvente soluções já testadas e mostra onde ainda falta resposta.',
+      'Para cada sistema foram registrados pontos positivos, pontos negativos e uma ideia aproveitável para o design futuro. É essa terceira coluna que liga a análise à fase de Ideação: cada linha da tabela deixa uma decisão de projeto em aberto.',
     ],
+    categorias: {
+      'Concorrente direto': 'mesmo objetivo e mesmo público que o UffInd',
+      'Concorrente indireto': 'resolvem parte do problema ou atendem um público vizinho',
+      Inspirador: 'outro problema, mas com experiência de uso que vale importar',
+    },
   },
 
   questionario: {
     paragrafos: [
-      'O questionário é a técnica quantitativa que complementa as entrevistas: enquanto a entrevista explica em profundidade por que um comportamento acontece, o questionário mede com que frequência ele aparece em uma amostra maior.',
-      'O instrumento foi elaborado a partir das dúvidas e suposições registradas na Matriz CSD. Responda pelo link abaixo.',
+      'O questionário é a parte quantitativa da Imersão. Enquanto a entrevista mostra em profundidade por que um comportamento acontece, o questionário mostra quantas pessoas passam pela mesma coisa.',
+      'As perguntas foram formuladas a partir das suposições e das dúvidas registradas na Matriz CSD, de modo que cada resposta ajude a confirmar ou a descartar um item daquele board.',
     ],
-    aviso: null,
     rotuloBotao: 'Responder o questionário',
-    link: 'https://docs.google.com/forms/d/e/1FAIpQLSehTnkBUmLGbI-8mmAjJvoPzx3MPNU-6kKu0YUMUX56PFDQ4w/viewform?usp=sharing&ouid=104628543094684746269',
+    notaFormulario:
+      'O formulário está aberto no Google Forms e pode ser respondido por qualquer aluno do IC.',
+    planoAnalise:
+      'As respostas serão tabuladas por frequência e apresentadas aqui em gráficos, comparando os canais que os alunos usam hoje para se localizar e os tipos de informação que eles não conseguem encontrar.',
+    estadoVazioResultados:
+      'A coleta de respostas está aberta. Os gráficos e a leitura dos resultados serão publicados nesta seção quando o questionário for encerrado.',
+    planoCorrelacoes:
+      'Além da frequência de cada resposta, serão cruzadas as perguntas que se relacionam. Por exemplo, tempo de curso contra dificuldade relatada, e canal utilizado contra tipo de informação procurada.',
+    estadoVazioCorrelacoes:
+      'Os cruzamentos entre perguntas dependem do fechamento da coleta e serão publicados junto com a análise.',
   },
 }

@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// base precisa bater com o nome do repositorio no GitHub Pages:
-// https://<usuario>.github.io/portfolio-uffindinho/
+// base relativo: os assets sao referenciados como "./assets/..." e funcionam
+// em qualquer caminho do GitHub Pages, independente do nome do repositorio e
+// da caixa das letras (Portfolio-Uffindinho vs portfolio-uffindinho).
+// So funciona porque as rotas usam HashRouter — nao ha navegacao real de path.
 export default defineConfig({
-  base: '/Portfolio-Uffindinho/',
+  base: './',
   plugins: [react()],
 })

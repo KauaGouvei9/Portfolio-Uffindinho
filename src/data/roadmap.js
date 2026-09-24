@@ -1,11 +1,11 @@
 // Roadmap: o processo de design do projeto, sem datas e sem status.
-// Substitui o antigo cronograma.js — um portfolio publico mostra o percurso
+// Substitui o antigo cronograma.js. Um portfolio publico mostra o percurso
 // metodologico, nao o calendario interno do grupo.
 
 export const roadmap = {
   definicao: [
     'O roadmap é um diagrama, semelhante a um mapa, que organiza todas as atividades executadas durante o processo de design.',
-    'Neste projeto seguimos a metodologia do Processo de Design Centrado no Humano, baseada nas etapas propostas pela organização IDEO, pioneira e mundialmente reconhecida na aplicação de design centrado nos usuários.',
+    'Neste projeto seguimos a metodologia do Processo de Design Centrado no Humano, baseada nas etapas propostas pela IDEO.',
   ],
 
   // Cada grupo vira uma coluna. A numeracao das atividades e continua

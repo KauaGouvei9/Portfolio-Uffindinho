@@ -97,7 +97,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* a Imersao e a etapa publicada — recebe a cor de marcacao */
+/* a Imersao e a etapa publicada, entao recebe a cor de marcacao */
 .grupo:first-child .tituloGrupo {
   border-bottom-color: var(--marca);
 }

@@ -1,26 +1,40 @@
-// Identidade e textos institucionais do projeto.
+// Identidade e textos do projeto.
 // Editar este arquivo muda o hero da Home e o rodape de todas as paginas.
 
 export const projeto = {
-  nome: 'Uffindinho',
+  nome: 'UffInd',
+  // as duas metades do nome sao pintadas com cores diferentes no hero
+  nomePartes: [{ texto: 'Uff', cor: 'azul' }, { texto: 'Ind', cor: 'vermelho' }],
+  mascote: 'Uffindinho',
   grupo: 'Grupo 3',
 
-  // frase curta do hero — explica o projeto em uma linha
-  tagline: 'Um guia digital para encontrar salas, laboratórios e serviços administrativos do Instituto de Computação da UFF.',
+  // frase curta do hero: explica o projeto em uma linha
+  tagline:
+    'Um guia digital para encontrar salas, laboratórios e serviços administrativos do Instituto de Computação da UFF.',
 
-  // 2 a 3 linhas: o que é o Uffindinho e o que ele resolve
+  // 2 a 3 linhas sobre o que o Uffindinho resolve
   descricao:
-    'Hoje essa informação está dividida entre o site do IC, o idUFF e o mural do primeiro andar — e nenhum deles atende quem não é aluno. O Uffindinho reúne tudo em um só lugar, aberto a alunos e visitantes.',
+    'Hoje essa informação está dividida entre o site do IC, o idUFF e o mural do primeiro andar. Nenhum desses canais atende quem não é aluno. O UffInd reúne tudo em um lugar só, aberto tanto para quem estuda no Instituto quanto para quem está visitando.',
 
-  // pergunta do projeto — usada na pagina de Imersao (Formato do Problema),
-  // nao na Home
+  // pergunta do projeto, usada na pagina de Imersao (How Might We)
   hmw: 'Como poderíamos ajudar alunos e visitantes a encontrar, de forma rápida e clara, informações sobre salas e serviços administrativos no IC e no idUFF?',
 
-  // intro da seção "O que estamos construindo"
+  // secao "Falando sobre o Uffindinho", no fim da pagina Equipe.
+  // O mascote da Home leva ate aqui.
+  sobreMascote: {
+    titulo: 'Falando sobre o Uffindinho',
+    paragrafos: [
+      'Quem está perdido no IC não precisa de mais uma mensagem de erro genérica. Precisa de alguém que já passou por aquilo.',
+      'O Uffindinho é o mascote do UffInd. Ele aparece quando a sala não é encontrada, no primeiro acesso e naqueles momentos em que o sistema poderia simplesmente cuspir um código de erro e deixar a pessoa se virando.',
+      'Ele também já procurou sala de número ímpar no lado par do corredor. Na UFF os dois lados seguem numerações diferentes, e é impressionante a quantidade de gente que descobre isso da pior forma possível: chegando atrasada na porta errada. O Uffindinho está ali porque o sistema foi feito por quem passou exatamente por isso.',
+    ],
+  },
+
+  // intro da secao "O que estamos construindo"
   contextoConstrucao:
     'As direções abaixo saíram da fase de Imersão e serão detalhadas na Ideação.',
 
-  // 2 a 3 blocos curtos. icone aceita: busca | servicos | acesso
+  // icone aceita: busca | servicos | acesso
   construindo: [
     {
       icone: 'busca',
@@ -51,7 +65,7 @@ export const instituicional = {
   periodo: '2026.2',
   professora: 'Daniela Trevisan',
   logos: [
-    { arquivo: 'assets/logos/uff.png', alt: 'Universidade Federal Fluminense' },
-    { arquivo: 'assets/logos/ic.png', alt: 'Instituto de Computação — UFF' },
+    { arquivo: 'assets/logos/uff.svg', alt: 'Universidade Federal Fluminense' },
+    { arquivo: 'assets/logos/ic.png', alt: 'Instituto de Computação da UFF' },
   ],
 }

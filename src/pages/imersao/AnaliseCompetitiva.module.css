@@ -118,6 +118,38 @@
   font-style: italic;
 }
 
+/* legenda das tres categorias */
+.categorias {
+  display: grid;
+  gap: var(--e-1);
+  margin-top: var(--e-3);
+  padding: var(--e-2);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
+}
+
+.categoria {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.categoriaTexto {
+  margin: 0;
+  font-size: var(--t-sm);
+  color: var(--tinta-media);
+}
+
+/* celula ainda sem o texto do board do grupo.
+   Sem opacity: reduzir a opacidade derrubaria o contraste abaixo do AA. */
+.aPreencher {
+  font-size: var(--t-xs);
+  font-style: italic;
+  color: var(--tinta-media);
+}
+
 .dicaScroll {
   margin-top: var(--e-1);
   font-size: var(--t-xs);

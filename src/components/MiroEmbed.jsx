@@ -6,9 +6,9 @@ import estilos from './MiroEmbed.module.css'
  * Wrapper reutilizavel para iframes do Miro (ou qualquer embed).
  *
  * props:
- *   src    — URL de embed. Se null/vazio, exibe o card de "em preparacao".
- *   title  — titulo acessivel do quadro (vira aria-label do iframe).
- *   height — altura CSS do wrapper. Default "520px".
+ *   src:    URL de embed. Se null/vazio, exibe o card de "em preparacao".
+ *   title:  titulo acessivel do quadro (vira aria-label do iframe).
+ *   height: altura CSS do wrapper. Default "520px".
  *
  * A altura e aplicada como custom property via ref, para nao usar style inline.
  */
@@ -45,7 +45,7 @@ export default function MiroEmbed({ src, title, height = '520px' }) {
         <Clock className={estilos.icone} size={40} strokeWidth={1.5} aria-hidden="true" />
         <p className={estilos.placeholderTitulo}>{title}</p>
         <p className={estilos.placeholderTexto}>
-          Conteúdo em preparação — será publicado em breve
+          Conteúdo em preparação. Será publicado em breve.
         </p>
       </div>
     )
@@ -58,7 +58,7 @@ export default function MiroEmbed({ src, title, height = '520px' }) {
         <WifiOff className={estilos.icone} size={40} strokeWidth={1.5} aria-hidden="true" />
         <p className={estilos.placeholderTitulo}>Não foi possível carregar o quadro</p>
         <p className={estilos.placeholderTexto}>
-          O board “{title}” não pôde ser exibido aqui. Isso costuma acontecer quando o
+          O board "{title}" não pôde ser exibido aqui. Isso costuma acontecer quando o
           navegador bloqueia conteúdo de terceiros ou o quadro não está público.
         </p>
         <a className={estilos.linkDireto} href={src} target="_blank" rel="noreferrer">
