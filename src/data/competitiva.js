@@ -1,8 +1,7 @@
 // Analise competitiva: alimenta a tabela em pages/imersao/AnaliseCompetitiva.jsx.
 //
 // origem: 'documento'  = veio da analise registrada pelo grupo
-//         'desk'       = levantado por desk research sobre sistemas publicos,
-//                        ainda sem validacao do grupo
+//         'desk'       = levantado por desk research sobre sistemas publicos
 // O campo origem nao aparece na tela. Serve para o grupo saber o que precisa
 // revisar antes da entrega.
 
@@ -85,22 +84,6 @@ export const competitiva = [
       'Interface densa para quem só quer achar uma sala rápido',
     ],
     ideiaDesign: 'Filtrar por tipo de espaço, como laboratório ou secretaria',
-  },
-  {
-    sistema: 'SolicitaSI (UFF)',
-    tipo: 'Concorrente direto',
-    origem: 'a-validar',
-    positivos: [],
-    negativos: [],
-    ideiaDesign: '',
-  },
-  {
-    sistema: 'Projeto da UTFPR',
-    tipo: 'Concorrente direto',
-    origem: 'a-validar',
-    positivos: [],
-    negativos: [],
-    ideiaDesign: '',
   },
   {
     sistema: 'Site EAU/UFF',

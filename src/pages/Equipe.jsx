@@ -5,9 +5,8 @@ import Breadcrumb from '../components/Breadcrumb'
 import { equipe } from '../data/equipe'
 import { projeto } from '../data/projeto'
 import pagina from './Pagina.module.css'
+import imagemMascote from '../assets/uffindinho.png'
 import estilos from './Equipe.module.css'
-
-const imagemMascote = `${import.meta.env.BASE_URL}assets/uffindinho.png`
 
 export default function Equipe() {
   const localizacao = useLocation()

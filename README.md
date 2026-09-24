@@ -49,13 +49,14 @@ funciona sem configuração de servidor.
 
 ## 3. Como substituir o Uffindinho
 
-Troque `public/assets/uffindinho.png` mantendo o nome. O arquivo atual é um PNG
-com fundo transparente, 560px de largura (o dobro dos 280px exibidos, para telas
-retina) e 22KB. Se for gerar outro, mantenha o fundo transparente: um fundo
-branco aparece como um retângulo sobre o papel azul-gelo do site.
+Troque `src/assets/uffindinho.png` mantendo o nome. O arquivo atual é um PNG com
+fundo transparente, 560px de largura (o dobro dos 280px exibidos, para telas
+retina) e 22KB. Mantenha o fundo transparente: um fundo branco vira um retângulo
+visível sobre o papel azul-gelo do site.
 
-Enquanto o arquivo não existir, o hero mostra um ícone de localização no lugar,
-e o layout não quebra.
+A imagem fica em `src/assets/` e não em `public/` de propósito. Assim o Vite
+gera um nome com hash a cada build (`uffindinho-3AMCa9en.png`), e o navegador
+de quem já visitou o site nunca serve a versão antiga do cache.
 
 Os favicons em `public/` (`favicon.ico`, `favicon-16x16.png`,
 `favicon-32x32.png`, `apple-touch-icon.png` e `favicon-512x512.png`) são recortes
@@ -95,7 +96,9 @@ vazio dentro da própria página (ex.: o placeholder do Miro no Mapa de Empatia)
 ## 6. Estrutura de pastas
 
 ```
-public/assets/   → imagens e PDFs servidos direto (uffindinho.png, logos/, docs/)
+public/assets/   → servidos direto: logos institucionais, TCLE em PDF, foto da cartolina
+src/assets/      → imagens versionadas pelo Vite (a logo do mascote)
+scripts/         → utilitários de linha de comando (geração do TCLE)
 src/styles/      → global.css: tokens de cor, tipografia, reset e utilitários
 src/components/  → componentes reutilizáveis, cada um com seu CSS Module
 src/pages/       → uma página por rota; pages/imersao/ agrupa as entregas da fase
@@ -114,7 +117,10 @@ dist/            → build estático gerado pelo npm run build (não versionar)
 | Tabela da análise competitiva | `src/data/competitiva.js` |
 | Roteiro, perfis, TCLE e resultados das entrevistas | `src/data/entrevistas.js` |
 | Integrantes, cursos e links de perfil | `src/data/equipe.js` |
-| Links de embed do Miro | `src/data/embeds.js` |
+| Links de embed do Miro e do formulário | `src/data/embeds.js` |
+| Resultados e gráficos do questionário | `src/data/questionario.js` |
+| Referências das certezas da Matriz CSD | `src/data/csd.js` |
+| Campos e requisitos do Mapa de Empatia | `src/data/mapaEmpatia.js` |
 | Ordem das entregas, rótulos e navegação Anterior/Próxima | `src/data/entregas.js` |
 
 ## 8. Decisões técnicas
@@ -132,13 +138,11 @@ dist/            → build estático gerado pelo npm run build (não versionar)
 
 ## 9. Pendências conhecidas
 
-- `public/assets/docs/TCLE_G3.pdf`: PDF do termo. Depois de adicionar o arquivo,
-  mude `arquivoDisponivel` para `true` em `src/data/entrevistas.js`.
 - `embeds.mapaEmpatia`: digitalizar a cartolina no Miro e colar a URL.
-- Referências das certezas da Matriz CSD, em `src/data/csd.js`.
-- Pontos positivos, negativos e ideias de design da Análise Competitiva, em
-  `src/data/competitiva.js`.
 - Conclusões das entrevistas, em `src/data/entrevistas.js`.
+
+O TCLE em PDF é gerado a partir do texto do site. Se mudar o termo em
+`src/data/entrevistas.js`, rode `npm run tcle` para atualizar o arquivo.
 
 ## 10. Convenções de texto
 

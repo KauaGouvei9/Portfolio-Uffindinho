@@ -1,21 +1,20 @@
 // Resultados do questionario aplicado no Google Forms.
-// Fonte: relatorio "Analise das respostas do questionario de IHC",
-// gerado a partir da planilha exportada do Forms (29 respostas).
+// Fonte: relatorio "Analise das respostas do questionario de IHC".
 //
-// Os blocos marcados com base 27 usam menos respostas porque as duas
-// primeiras chegaram antes de um ajuste em parte do formulario.
+// A pagina mostra apenas percentuais. O total de respostas fica de fora de
+// proposito: a coleta segue aberta e o numero mudaria a cada atualizacao.
 
 export const questionario = {
   amostra: {
-    total: 29,
     paragrafos: [
-      'A base tem 29 respostas, quase todas de alunos de graduação. Vinte e três são de Sistemas de Informação e cinco de Ciência da Computação. Uma resposta seguiu o caminho "outro" e ficou sem curso.',
-      'A amostra é pequena e de conveniência, então os números orientam requisitos de projeto e não descrevem toda a comunidade do IC. As duas primeiras respostas chegaram antes de um ajuste em algumas perguntas: elas valem para os blocos compatíveis, e os blocos de serviços administrativos, preferências e prioridades usam 27 respostas.',
+      'Quem respondeu é quase todo aluno de graduação, com forte concentração em Sistemas de Informação e presença menor de Ciência da Computação.',
+      'A amostra é de conveniência, então os percentuais orientam requisitos de projeto e não descrevem toda a comunidade do IC. Algumas perguntas entraram depois do início da coleta e por isso têm base um pouco menor que o restante.',
+      'A coleta segue aberta, e os percentuais desta página são uma leitura do momento em que a análise foi feita.',
     ],
   },
 
   destaques: [
-    { valor: '29', rotulo: 'respostas' },
+    { valor: '79,3%', rotulo: 'não sabiam onde procurar a informação' },
     { valor: '55,2%', rotulo: 'buscam salas com frequência ou mais' },
     { valor: '55,2%', rotulo: 'encontram dificuldades com frequência ou mais' },
     { valor: '93,1%', rotulo: 'deram nota 5 de 5 para a utilidade da solução' },
@@ -30,33 +29,31 @@ export const questionario = {
       titulo: 'Com que frequência o problema aparece',
       intro:
         'Mais da metade da amostra (55,2%) procura informação sobre salas com frequência ou muita frequência, e a mesma proporção relata dificuldades nessa mesma faixa.',
-      base: 29,
       unidade: '%',
       dados: [
         { rotulo: 'Busca informações sobre salas (frequentemente ou mais)', valor: 55.2 },
         { rotulo: 'Encontra dificuldades (frequentemente ou mais)', valor: 55.2 },
-        { rotulo: 'Busca serviços administrativos (às vezes ou mais)', valor: 59.2, base: 27 },
+        { rotulo: 'Busca serviços administrativos (às vezes ou mais)', valor: 59.2 },
       ],
-      nota: 'A facilidade para localizar salas teve média 2,52 em uma escala de 1 a 5, com mediana 3. Quatorze pessoas (48,3%) deram nota 1 ou 2, e ninguém marcou 5.',
+      nota: 'A facilidade para localizar salas teve média 2,52 em uma escala de 1 a 5, com mediana 3. Quase metade (48,3%) deu nota 1 ou 2, e ninguém marcou 5.',
     },
     {
       id: 'canais-hoje',
       titulo: 'Como as pessoas procuram informação hoje',
       intro:
         'A busca é social antes de ser digital. Colegas e grupos de WhatsApp aparecem na frente de todos os canais oficiais.',
-      base: 29,
       unidade: '%',
       destaqueAcima: 60,
       dados: [
         { rotulo: 'Colegas', valor: 86.2 },
         { rotulo: 'Grupos de WhatsApp', valor: 69.0 },
-        { rotulo: 'Procura presencial pelo prédio', valor: 51.9, base: 27 },
+        { rotulo: 'Procura presencial pelo prédio', valor: 51.9 },
         { rotulo: 'Mural físico', valor: 41.4 },
         { rotulo: 'idUFF', valor: 34.5 },
         { rotulo: 'Site do IC/UFF', valor: 10.3 },
         { rotulo: 'Professores', valor: 10.3 },
         { rotulo: 'Google', valor: 10.3 },
-        { rotulo: 'Funcionários ou secretaria', valor: 3.7, base: 27 },
+        { rotulo: 'Funcionários ou secretaria', valor: 3.7 },
       ],
       nota: 'Quando a informação não é encontrada, 48,3% perguntam primeiro a um colega e 34,5% recorrem a um grupo de WhatsApp. Somadas, essas duas saídas cobrem 82,8% da amostra.',
     },
@@ -65,7 +62,6 @@ export const questionario = {
       titulo: 'Principais dificuldades',
       intro:
         'A dificuldade dominante não é entender a informação, é descobrir onde ela está. A pergunta permitia várias escolhas, então os percentuais não somam 100%.',
-      base: 29,
       unidade: '%',
       destaqueAcima: 55,
       dados: [
@@ -86,7 +82,6 @@ export const questionario = {
       titulo: 'O que as pessoas preferem',
       intro:
         'A preferência aponta para o digital oficial, o oposto do que acontece na prática.',
-      base: 27,
       unidade: '%',
       destaqueAcima: 70,
       dados: [
@@ -105,7 +100,6 @@ export const questionario = {
       titulo: 'Prioridades para a solução',
       intro:
         'Calendário e avisos ficaram acima da própria localização das salas, o que empurra o projeto para além de um mapa.',
-      base: 27,
       unidade: '%',
       destaqueAcima: 80,
       dados: [
@@ -120,7 +114,7 @@ export const questionario = {
         { rotulo: 'Contatos de setores administrativos', valor: 40.7 },
         { rotulo: 'Serviços oferecidos por cada setor', valor: 37.0 },
       ],
-      nota: 'A utilidade percebida foi quase unânime: 27 de 29 pessoas deram nota 5 e as outras duas deram 4. Por quase não variar, essa pergunta confirma aceitação geral mas não explica diferenças entre respondentes.',
+      nota: 'A utilidade percebida foi quase unânime: a grande maioria deu a nota máxima e o restante deu a nota seguinte. Por quase não variar, essa pergunta confirma aceitação geral, mas não ajuda a explicar diferenças entre respondentes.',
     },
   ],
 
@@ -149,8 +143,7 @@ export const questionario = {
 
   abertas: {
     intro:
-      'Sete respostas abertas tinham conteúdo substantivo. A codificação é exploratória e os temas podem se sobrepor.',
-    base: 7,
+      'Parte dos respondentes deixou comentários abertos. A codificação é exploratória e os temas podem se sobrepor, então os percentuais não somam 100%.',
     unidade: '%',
     dados: [
       { rotulo: 'Centralização e integração', valor: 57.1 },
@@ -172,7 +165,7 @@ export const questionario = {
   ],
 
   limitacoes:
-    'A amostra é pequena, de conveniência e concentrada em alunos de graduação, sobretudo de Sistemas de Informação. As escalas são ordinais, os campos abertos somam apenas sete respostas substantivas e as associações não estabelecem causalidade. Os resultados servem para orientar requisitos e novas avaliações de usabilidade.',
+    'A amostra é de conveniência e concentrada em alunos de graduação, sobretudo de Sistemas de Informação. As escalas são ordinais, os campos abertos têm poucas respostas substantivas e as associações não estabelecem causalidade. Os resultados servem para orientar requisitos e novas avaliações de usabilidade.',
 
-  fonte: 'Planilha exportada do Google Forms, com 29 respostas. Semente das reamostragens: 20260923.',
+  fonte: 'Dados da planilha exportada do Google Forms. Semente das reamostragens: 20260923.',
 }

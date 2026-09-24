@@ -53,11 +53,6 @@
   text-align: right;
 }
 
-.baseDiferente {
-  font-size: var(--t-xs);
-  color: var(--tinta-media);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .preenchimento {
     transition: none;

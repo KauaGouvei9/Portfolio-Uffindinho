@@ -6,6 +6,7 @@ import PhaseCard from '../components/PhaseCard'
 import { projeto } from '../data/projeto'
 import { entregasImersao } from '../data/entregas'
 import { equipe } from '../data/equipe'
+import imagemMascote from '../assets/uffindinho.png'
 import estilos from './Home.module.css'
 
 // UNICO reveal orquestrado do site: os elementos do hero entram em sequencia.
@@ -19,9 +20,6 @@ const item = {
   oculto: { opacity: 0, y: 8 },
   visivel: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.2, 0, 0.2, 1] } },
 }
-
-// O caminho respeita o base do Vite (/portfolio-uffindinho/) no GitHub Pages.
-const imagemMascote = `${import.meta.env.BASE_URL}assets/uffindinho.png`
 
 // icones da secao "O que estamos construindo", escolhidos em data/projeto.js
 const ICONES = { busca: Search, servicos: Landmark, acesso: DoorOpen }

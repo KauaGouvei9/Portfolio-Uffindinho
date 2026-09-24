@@ -16,8 +16,8 @@ export default function Questionario() {
       <header className={pagina.cabecalho}>
         <h1>Questionário</h1>
         <p className={`textoCorrido ${pagina.intro}`}>
-          Técnica quantitativa da Imersão, respondida por {questionario.amostra.total} pessoas
-          do Instituto de Computação.
+          Técnica quantitativa da Imersão, respondida por alunos do Instituto de
+          Computação.
         </p>
       </header>
 
@@ -64,11 +64,7 @@ export default function Questionario() {
           </div>
           <p className={`textoCorrido ${pagina.intro}`}>{secao.intro}</p>
 
-          <GraficoBarras
-            dados={secao.dados}
-            base={secao.base}
-            destaqueAcima={secao.destaqueAcima}
-          />
+          <GraficoBarras dados={secao.dados} destaqueAcima={secao.destaqueAcima} />
 
           {secao.nota && (
             <p className={pagina.nota}>
@@ -115,7 +111,7 @@ export default function Questionario() {
         </div>
         <p className={`textoCorrido ${pagina.intro}`}>{questionario.abertas.intro}</p>
 
-        <GraficoBarras dados={questionario.abertas.dados} base={questionario.abertas.base} />
+        <GraficoBarras dados={questionario.abertas.dados} />
 
         <p className={pagina.nota}>
           <Info className={pagina.notaIcone} size={16} aria-hidden="true" />

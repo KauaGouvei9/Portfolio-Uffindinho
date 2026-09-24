@@ -5,14 +5,13 @@ import estilos from './GraficoBarras.module.css'
  * Grafico de barras horizontais para dados de percentual.
  *
  * props:
- *   dados          lista de { rotulo, valor, base? }
- *   base           base padrao da secao, usada quando o item nao tem base propria
+ *   dados          lista de { rotulo, valor }
  *   destaqueAcima  valores acima deste limiar ganham a cor de marcacao
  *
  * A barra e decorativa: o numero aparece como texto ao lado, entao quem usa
  * leitor de tela recebe a mesma informacao sem depender do desenho.
  */
-export default function GraficoBarras({ dados, base, destaqueAcima }) {
+export default function GraficoBarras({ dados, destaqueAcima }) {
   const containerRef = useRef(null)
 
   // a largura vem de data-valor, aplicada como custom property.
@@ -30,16 +29,10 @@ export default function GraficoBarras({ dados, base, destaqueAcima }) {
     <div className={estilos.grafico} ref={containerRef}>
       {dados.map((item) => {
         const destacado = destaqueAcima != null && item.valor >= destaqueAcima
-        const baseDiferente = item.base && item.base !== base
 
         return (
           <div key={item.rotulo} className={`${estilos.linha} ${destacado ? estilos.destaque : ''}`}>
-            <p className={estilos.rotulo}>
-              {item.rotulo}
-              {baseDiferente && (
-                <span className={estilos.baseDiferente}> (base {item.base})</span>
-              )}
-            </p>
+            <p className={estilos.rotulo}>{item.rotulo}</p>
             <div className={estilos.trilho} aria-hidden="true">
               <span className={estilos.preenchimento} data-valor={item.valor} />
             </div>
