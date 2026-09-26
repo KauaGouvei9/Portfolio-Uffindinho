@@ -2,9 +2,9 @@
 // Editar este arquivo muda o hero da Home e o rodape de todas as paginas.
 
 export const projeto = {
-  nome: 'UffInd',
+  nome: 'UFFIND',
   // as duas metades do nome sao pintadas com cores diferentes no hero
-  nomePartes: [{ texto: 'Uff', cor: 'azul' }, { texto: 'Ind', cor: 'vermelho' }],
+  nomePartes: [{ texto: 'UFF', cor: 'azul' }, { texto: 'IND', cor: 'petroleo' }],
   mascote: 'Uffindinho',
   grupo: 'Grupo 3',
 
@@ -14,10 +14,10 @@ export const projeto = {
 
   // 2 a 3 linhas sobre o que o Uffindinho resolve
   descricao:
-    'Hoje essa informação está dividida entre o site do IC, o idUFF e o mural do primeiro andar. Nenhum desses canais atende quem não é aluno. O UffInd reúne tudo em um lugar só, aberto tanto para quem estuda no Instituto quanto para quem está visitando.',
+    'Hoje, essas informações estão divididas entre o site do IC, o idUFF e o mural do primeiro andar. O UFFIND reúne tudo em um só lugar, com acesso simples para estudantes, visitantes, professores e demais servidores do Instituto.',
 
   // pergunta do projeto, usada na pagina de Imersao (How Might We)
-  hmw: 'Como poderíamos ajudar alunos e visitantes a encontrar, de forma rápida e clara, informações sobre salas e serviços administrativos no IC e no idUFF?',
+  hmw: 'Como poderíamos ajudar quem estuda, trabalha ou visita o IC/UFF a encontrar, de forma rápida e clara, informações sobre salas e serviços administrativos?',
 
   // secao "Falando sobre o Uffindinho", no fim da pagina Equipe.
   // O mascote da Home leva ate aqui.
@@ -25,7 +25,7 @@ export const projeto = {
     titulo: 'Falando sobre o Uffindinho',
     paragrafos: [
       'Quem está perdido no IC não precisa de mais uma mensagem de erro genérica. Precisa de alguém que já passou por aquilo.',
-      'O Uffindinho é o mascote do UffInd. Ele aparece quando a sala não é encontrada, no primeiro acesso e naqueles momentos em que o sistema poderia simplesmente cuspir um código de erro e deixar a pessoa se virando.',
+      'O Uffindinho é o mascote do UFFIND. Ele aparece quando a sala não é encontrada, no primeiro acesso e naqueles momentos em que o sistema poderia simplesmente cuspir um código de erro e deixar a pessoa se virando.',
       'Ele também já procurou sala de número ímpar no lado par do corredor. Na UFF os dois lados seguem numerações diferentes, e é impressionante a quantidade de gente que descobre isso da pior forma possível: chegando atrasada na porta errada. O Uffindinho está ali porque o sistema foi feito por quem passou exatamente por isso.',
     ],
   },

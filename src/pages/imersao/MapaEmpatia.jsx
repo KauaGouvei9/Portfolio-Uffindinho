@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ImageOff, Info } from 'lucide-react'
+import { ImageOff } from 'lucide-react'
 import Breadcrumb from '../../components/Breadcrumb'
 import MiroEmbed from '../../components/MiroEmbed'
 import PageNav from '../../components/PageNav'
@@ -143,13 +143,7 @@ export default function MapaEmpatia() {
           <h2 id="versao-digital">Quadro digital</h2>
         </div>
 
-        <MiroEmbed src={embeds.mapaEmpatia} title="Mapa de Empatia do Uffindinho" />
-
-        <p className={pagina.nota}>
-          <Info className={pagina.notaIcone} size={16} aria-hidden="true" />
-          A versão digital da cartolina no Miro será publicada aqui. A transcrição
-          completa dos quatro campos está na seção acima.
-        </p>
+        <MiroEmbed src={embeds.mapaEmpatia} title="Mapa de Empatia do UFFIND" />
       </section>
 
       <PageNav atualId="mapa-empatia" />

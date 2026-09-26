@@ -70,7 +70,7 @@ export default function HMW() {
 
         <div className={estilos.rolagem} tabIndex="0" role="region" aria-labelledby="formato">
           <table className={estilos.tabela}>
-            <caption>Os três campos do formato do problema aplicados ao Uffindinho.</caption>
+            <caption>Os três campos do formato do problema aplicados ao UFFIND.</caption>
             <thead>
               <tr>
                 <th scope="col">Quem</th>

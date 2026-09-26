@@ -11,17 +11,13 @@ export const metodos = {
     nota: 'Navegue pelo board usando o scroll e o zoom do Miro. Clique no ícone de expansão para ver em tela cheia.',
   },
 
-  mapaEmpatia: {
-    nota: 'A versão digital da cartolina no Miro será publicada aqui. A transcrição completa dos quatro campos está na seção acima.',
-  },
-
   analiseCompetitiva: {
     paragrafos: [
       'A análise competitiva compara sistemas que já resolvem, bem ou mal, o mesmo problema do usuário. Ela evita que o projeto reinvente soluções já testadas e mostra onde ainda falta resposta.',
       'Para cada sistema foram registrados pontos positivos, pontos negativos e uma ideia aproveitável para o design futuro. É essa terceira coluna que liga a análise à fase de Ideação: cada linha da tabela deixa uma decisão de projeto em aberto.',
     ],
     categorias: {
-      'Concorrente direto': 'mesmo objetivo e mesmo público que o UffInd',
+      'Concorrente direto': 'mesmo objetivo e mesmo público que o UFFIND',
       'Concorrente indireto': 'resolvem parte do problema ou atendem um público vizinho',
       Inspirador: 'outro problema, mas com experiência de uso que vale importar',
     },
