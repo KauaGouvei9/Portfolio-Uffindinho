@@ -14,9 +14,9 @@ export const entrevistas = {
 
   objetivo: {
     geral:
-      'Compreender como alunos de graduação buscam informações sobre salas e serviços administrativos no IC/UFF, identificando dificuldades, estratégias adotadas e lacunas nos canais digitais e físicos atualmente disponíveis.',
+      'Compreender como as pessoas que estudam, trabalham ou visitam o IC/UFF buscam informações sobre salas e serviços administrativos, identificando dificuldades, estratégias adotadas e lacunas nos canais digitais e físicos atualmente disponíveis.',
     especificos: [
-      'Mapear os caminhos percorridos pelos alunos para localizar salas e secretarias.',
+      'Mapear os caminhos percorridos para localizar salas e secretarias, tanto por quem estuda quanto por quem trabalha no Instituto.',
       'Identificar pontos de confusão ou frustração nos sistemas existentes, como o site do IC, o idUFF e o mural físico.',
       'Levantar necessidades não atendidas que possam orientar o design da solução.',
     ],
@@ -24,11 +24,27 @@ export const entrevistas = {
 
   perfil: {
     intro:
-      'O estudo considera um único perfil de participante, definido a partir das personas e dos contextos de uso identificados na Matriz CSD e na Análise Competitiva.',
-    nome: 'Aluno de graduação do IC/UFF',
-    descricao:
-      'Estudante matriculado em Ciência da Computação, Sistemas de Informação e Inteligência Artificial/Ciência de Dados. A amostra inclui calouros e veteranos, reunindo diferentes níveis de familiaridade com o campus e com os sistemas da universidade.',
-    quantidade: 6,
+      'A pesquisa não se limita ao corpo discente. Professores e funcionários vivem o mesmo problema por outro ângulo: além de precisarem se localizar, são eles que respondem quando alguém se perde. Os perfis foram definidos a partir das personas e dos contextos de uso identificados na Matriz CSD e na Análise Competitiva.',
+    lista: [
+      {
+        nome: 'Alunos de graduação',
+        icone: 'alunos',
+        descricao:
+          'Estudantes matriculados em Ciência da Computação, Sistemas de Informação e Inteligência Artificial ou Ciência de Dados. Incluem calouros, que ainda não conhecem o prédio, e veteranos, que já criaram estratégias próprias para se localizar.',
+      },
+      {
+        nome: 'Professores',
+        icone: 'professores',
+        descricao:
+          'Docentes que lecionam no Instituto. Precisam localizar salas e laboratórios a cada novo período e costumam ser procurados por alunos em busca de informação.',
+      },
+      {
+        nome: 'Funcionários e servidores',
+        icone: 'funcionarios',
+        descricao:
+          'Servidores concursados e demais funcionários das secretarias, coordenações, portaria e suporte técnico. Estão do outro lado do balcão: são a fonte informal que supre o que os sistemas não entregam.',
+      },
+    ],
   },
 
   modalidade: {
@@ -102,7 +118,15 @@ export const entrevistas = {
       nome: 'Perfil do participante',
       duracao: '~5 min',
       perguntas: [
-        { codigo: 'P1', texto: 'Qual é o seu curso e semestre atual? Há quanto tempo você frequenta o IC?' },
+        {
+          codigo: 'P1',
+          texto: 'Use a versão correspondente ao perfil do participante:',
+          variantes: [
+            { perfil: 'Aluno', texto: 'Qual é o seu curso e semestre atual? Há quanto tempo você frequenta o IC?' },
+            { perfil: 'Professor', texto: 'Para quais cursos ou disciplinas você leciona atualmente? Há quanto tempo atua no IC?' },
+            { perfil: 'Funcionário', texto: 'Qual é o seu cargo ou setor? Há quanto tempo você trabalha no IC?' },
+          ],
+        },
         { codigo: 'P2', texto: 'Com que frequência você precisa buscar informações sobre salas ou serviços administrativos no IC?' },
         { codigo: 'P3', texto: 'Quando precisa localizar uma sala ou saber sobre um serviço, qual é o seu primeiro passo?' },
       ],
@@ -153,7 +177,7 @@ export const entrevistas = {
       {
         rotulo: 'Título da pesquisa',
         valor:
-          'Análise da situação atual: como alunos de graduação buscam informações sobre salas e serviços no IC/UFF.',
+          'Análise da situação atual: como alunos de graduação e colaboradores da instituição buscam informações sobre salas e serviços no IC/UFF.',
       },
       { rotulo: 'Instituição', valor: 'Universidade Federal Fluminense, Instituto de Computação' },
       { rotulo: 'Disciplina', valor: 'Interação Humano-Computador, Prof.ª Daniela Gorski Trevisan' },
@@ -168,7 +192,7 @@ export const entrevistas = {
       {
         titulo: 'O que é esta pesquisa?',
         texto:
-          'Você está sendo convidado(a) a participar de uma pesquisa acadêmica conduzida por estudantes de graduação do IC/UFF como parte da disciplina de Interação Humano-Computador. O objetivo é compreender como alunos de graduação buscam informações sobre salas e serviços administrativos no Instituto de Computação, a fim de identificar dificuldades e oportunidades de melhoria nos canais de informação existentes.',
+          'Você está sendo convidado(a) a participar de uma pesquisa acadêmica conduzida por estudantes de graduação do IC/UFF como parte da disciplina de Interação Humano-Computador. O objetivo é compreender como alunos de graduação e colaboradores da instituição buscam informações sobre salas e serviços administrativos no Instituto de Computação, a fim de identificar dificuldades e oportunidades de melhoria nos canais de informação existentes.',
       },
       {
         titulo: 'O que envolve a participação?',
@@ -193,7 +217,7 @@ export const entrevistas = {
       {
         titulo: 'Riscos e benefícios',
         texto:
-          'Esta pesquisa apresenta risco mínimo. Não envolve procedimentos físicos nem perguntas sensíveis de cunho pessoal. O benefício indireto é contribuir para a melhoria dos sistemas de informação do IC/UFF, beneficiando alunos atuais e futuros.',
+          'Esta pesquisa apresenta risco mínimo. Não envolve procedimentos físicos nem perguntas sensíveis de cunho pessoal. O benefício indireto é contribuir para a melhoria dos sistemas de informação do IC/UFF, beneficiando quem estuda, trabalha ou visita o Instituto.',
       },
     ],
     declaracao:

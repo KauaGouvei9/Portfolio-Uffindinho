@@ -12,12 +12,12 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources 3 0 R /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 4652 >>
+<< /Length 4734 >>
 stream
 BT /F2 16 Tf 1 0 0 1 56 769.89 Tm (Termo de Consentimento Livre e Esclarecido) Tj ET
 1 w 0.72 0.78 0.84 RG 56 758.6899999999999 m 539.28 758.6899999999999 l S
-BT /F1 9 Tf 1 0 0 1 56 735.6899999999999 Tm (Título da pesquisa: Análise da situação atual: como alunos de graduação buscam informações sobre salas e) Tj ET
-BT /F1 9 Tf 1 0 0 1 56 722.64 Tm (serviços no IC/UFF.) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 735.6899999999999 Tm (Título da pesquisa: Análise da situação atual: como alunos de graduação e colaboradores da instituição) Tj ET
+BT /F1 9 Tf 1 0 0 1 56 722.64 Tm (buscam informações sobre salas e serviços no IC/UFF.) Tj ET
 BT /F1 9 Tf 1 0 0 1 56 706.59 Tm (Instituição: Universidade Federal Fluminense, Instituto de Computação) Tj ET
 BT /F1 9 Tf 1 0 0 1 56 690.5400000000001 Tm (Disciplina: Interação Humano-Computador, Prof.ª Daniela Gorski Trevisan) Tj ET
 BT /F1 9 Tf 1 0 0 1 56 674.4900000000001 Tm (Pesquisadores: Kauã Gouveia de Carvalho, Fabricio de Freitas Rivas, Kaua Muller Campista, Kayo Vianna) Tj ET
@@ -27,9 +27,9 @@ BT /F1 9 Tf 1 0 0 1 56 645.3900000000002 Tm (Contato: giancarlos@id.uff.br) Tj E
 BT /F2 11 Tf 1 0 0 1 56 607.3400000000003 Tm (O que é esta pesquisa?) Tj ET
 BT /F1 10 Tf 1 0 0 1 56 589.3900000000002 Tm (Você está sendo convidado\(a\) a participar de uma pesquisa acadêmica conduzida por estudantes de) Tj ET
 BT /F1 10 Tf 1 0 0 1 56 574.8900000000002 Tm (graduação do IC/UFF como parte da disciplina de Interação Humano-Computador. O objetivo é) Tj ET
-BT /F1 10 Tf 1 0 0 1 56 560.3900000000002 Tm (compreender como alunos de graduação buscam informações sobre salas e serviços administrativos) Tj ET
-BT /F1 10 Tf 1 0 0 1 56 545.8900000000002 Tm (no Instituto de Computação, a fim de identificar dificuldades e oportunidades de melhoria nos) Tj ET
-BT /F1 10 Tf 1 0 0 1 56 531.3900000000002 Tm (canais de informação existentes.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 560.3900000000002 Tm (compreender como alunos de graduação e colaboradores da instituição buscam informações sobre) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 545.8900000000002 Tm (salas e serviços administrativos no Instituto de Computação, a fim de identificar dificuldades e) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 531.3900000000002 Tm (oportunidades de melhoria nos canais de informação existentes.) Tj ET
 BT /F2 11 Tf 1 0 0 1 56 505.8900000000002 Tm (O que envolve a participação?) Tj ET
 BT /F1 10 Tf 1 0 0 1 56 487.9400000000002 Tm (Sua participação consiste em uma entrevista individual, presencial, com duração estimada de 20 a) Tj ET
 BT /F1 10 Tf 1 0 0 1 56 473.4400000000002 Tm (30 minutos. A atividade será realizada em local combinado no IC/UFF. Você responderá perguntas) Tj ET
@@ -48,7 +48,7 @@ BT /F1 10 Tf 1 0 0 1 56 256.09000000000026 Tm (trabalhos produzidos. Nenhuma inf
 BT /F2 11 Tf 1 0 0 1 56 230.59000000000026 Tm (Riscos e benefícios) Tj ET
 BT /F1 10 Tf 1 0 0 1 56 212.64000000000027 Tm (Esta pesquisa apresenta risco mínimo. Não envolve procedimentos físicos nem perguntas sensíveis) Tj ET
 BT /F1 10 Tf 1 0 0 1 56 198.14000000000027 Tm (de cunho pessoal. O benefício indireto é contribuir para a melhoria dos sistemas de informação) Tj ET
-BT /F1 10 Tf 1 0 0 1 56 183.64000000000027 Tm (do IC/UFF, beneficiando alunos atuais e futuros.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56 183.64000000000027 Tm (do IC/UFF, beneficiando quem estuda, trabalha ou visita o Instituto.) Tj ET
 0.6 w 0.72 0.78 0.84 RG 56 169.14000000000027 m 539.28 169.14000000000027 l S
 BT /F2 11 Tf 1 0 0 1 56 144.14000000000027 Tm (Declaração de consentimento) Tj ET
 BT /F1 10 Tf 1 0 0 1 56 126.19000000000028 Tm (Li e compreendi as informações acima. Tive a oportunidade de fazer perguntas e minhas dúvidas) Tj ET
@@ -80,10 +80,10 @@ xref
 0000000121 00000 n 
 0000000331 00000 n 
 0000000441 00000 n 
-0000005145 00000 n 
-0000005255 00000 n 
+0000005227 00000 n 
+0000005337 00000 n 
 trailer
 << /Size 8 /Root 1 0 R >>
 startxref
-5754
+5836
 %%EOF

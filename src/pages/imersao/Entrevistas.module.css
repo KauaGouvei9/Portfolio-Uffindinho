@@ -51,8 +51,19 @@
 
 @media (min-width: 760px) {
   .cartoes {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* modalidade ocupa a linha inteira, abaixo dos tres perfis */
+.cartaoLargo {
+  display: flex;
+  gap: var(--e-2);
+  margin-top: var(--e-2);
+  padding: var(--e-2);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background-color: var(--papel-alt);
 }
 
 .cartao {
@@ -221,6 +232,30 @@
   font-size: var(--t-sm);
   line-height: 1.5;
   max-width: 72ch;
+}
+
+/* P1 tem uma redacao por perfil de participante */
+.variantes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  margin-top: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--linha);
+}
+
+.variante {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  color: var(--tinta-media);
+}
+
+.variantePerfil {
+  flex-shrink: 0;
+  min-width: 11ch;
+  font-weight: 600;
+  color: var(--marca);
 }
 
 .codigo {

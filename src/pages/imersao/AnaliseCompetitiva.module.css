@@ -76,9 +76,11 @@
   border-color: color-mix(in srgb, var(--azul-uff) 40%, transparent);
 }
 
+/* nao usa --ok: aquele verde fica quase igual ao verde-petroleo de --marca,
+   e as duas etiquetas apareciam lado a lado na mesma legenda */
 .inspirador {
-  color: var(--ok);
-  border-color: color-mix(in srgb, var(--ok) 40%, transparent);
+  color: var(--inspirador);
+  border-color: color-mix(in srgb, var(--inspirador) 40%, transparent);
 }
 
 .lista {

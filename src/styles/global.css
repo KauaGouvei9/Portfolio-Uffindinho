@@ -13,7 +13,8 @@
   --azul-uff: #1a4e8a;     /* ancora institucional, links, ativo */
   --marca: #0f766e;        /* verde-petroleo para destaques complementares */
   --linha: #b9c7d6;        /* hairlines, malha tecnica, bordas */
-  --ok: #14705a;           /* status concluido */
+  --ok: #14705a;           /* verde de confirmacao (pontos positivos) */
+  --inspirador: #9a3412;   /* terceira categoria da analise competitiva */
 
   /* tipografia */
   --fonte-titulo: 'Bricolage Grotesque', system-ui, sans-serif;

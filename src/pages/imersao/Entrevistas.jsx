@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import {
+  Briefcase,
   ChevronDown,
   Download,
   FileText,
+  GraduationCap,
   Info,
   MapPin,
   MessageSquareDashed,
@@ -13,6 +15,8 @@ import PageNav from '../../components/PageNav'
 import { entrevistas } from '../../data/entrevistas'
 import pagina from '../Pagina.module.css'
 import estilos from './Entrevistas.module.css'
+
+const ICONES_PERFIL = { alunos: Users, professores: GraduationCap, funcionarios: Briefcase }
 
 const caminhoTcle = `${import.meta.env.BASE_URL}${entrevistas.tcle.arquivo}`
 
@@ -32,8 +36,8 @@ export default function Entrevistas() {
       <header className={pagina.cabecalho}>
         <h1>Entrevistas</h1>
         <p className={`textoCorrido ${pagina.intro}`}>
-          A técnica qualitativa da nossa Imersão: {entrevistas.tecnica.nome.toLowerCase()} com{' '}
-          {entrevistas.perfil.quantidade} alunos de graduação do Instituto de Computação.
+          A técnica qualitativa da nossa Imersão: {entrevistas.tecnica.nome.toLowerCase()} com
+          alunos, professores e funcionários do Instituto de Computação.
         </p>
       </header>
 
@@ -76,25 +80,27 @@ export default function Entrevistas() {
         <p className={`textoCorrido ${pagina.intro}`}>{entrevistas.perfil.intro}</p>
 
         <div className={estilos.cartoes}>
-          <div className={estilos.cartao}>
-            <Users className={estilos.cartaoIcone} size={22} aria-hidden="true" />
-            <div>
-              <h3 className={estilos.cartaoTitulo}>{entrevistas.perfil.nome}</h3>
-              <p className={estilos.contagem}>
-                {entrevistas.perfil.quantidade} participantes
-              </p>
-              <p className={estilos.cartaoTexto}>{entrevistas.perfil.descricao}</p>
-            </div>
-          </div>
+          {entrevistas.perfil.lista.map((item) => {
+            const Icone = ICONES_PERFIL[item.icone] ?? Users
+            return (
+              <div key={item.nome} className={estilos.cartao}>
+                <Icone className={estilos.cartaoIcone} size={22} aria-hidden="true" />
+                <div>
+                  <h3 className={estilos.cartaoTitulo}>{item.nome}</h3>
+                  <p className={estilos.cartaoTexto}>{item.descricao}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
 
-          <div className={estilos.cartao}>
-            <MapPin className={estilos.cartaoIcone} size={22} aria-hidden="true" />
-            <div>
-              <h3 className={estilos.cartaoTitulo}>
-                Modalidade: {entrevistas.modalidade.nome.toLowerCase()}
-              </h3>
-              <p className={estilos.cartaoTexto}>{entrevistas.modalidade.criterio}</p>
-            </div>
+        <div className={estilos.cartaoLargo}>
+          <MapPin className={estilos.cartaoIcone} size={22} aria-hidden="true" />
+          <div>
+            <h3 className={estilos.cartaoTitulo}>
+              Modalidade: {entrevistas.modalidade.nome.toLowerCase()}
+            </h3>
+            <p className={estilos.cartaoTexto}>{entrevistas.modalidade.criterio}</p>
           </div>
         </div>
       </section>
@@ -182,7 +188,19 @@ export default function Entrevistas() {
                         {bloco.perguntas.map((pergunta) => (
                           <li key={pergunta.codigo} className={estilos.pergunta}>
                             <span className={estilos.codigo}>{pergunta.codigo}</span>
-                            {pergunta.texto}
+                            <span>
+                              {pergunta.texto}
+                              {pergunta.variantes && (
+                                <span className={estilos.variantes}>
+                                  {pergunta.variantes.map((variante) => (
+                                    <span key={variante.perfil} className={estilos.variante}>
+                                      <span className={estilos.variantePerfil}>{variante.perfil}</span>
+                                      {variante.texto}
+                                    </span>
+                                  ))}
+                                </span>
+                              )}
+                            </span>
                           </li>
                         ))}
                       </ul>
